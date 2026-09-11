@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Confetti from 'react-confetti';
 
 export default function BirthdaySplash() {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(() => new Date() < new Date('2026-10-01T00:00:00'));
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
