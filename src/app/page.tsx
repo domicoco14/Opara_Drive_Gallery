@@ -12,7 +12,7 @@ import MagneticWrapper from '@/components/MagneticWrapper'
 
 export const metadata = {
   title: "Opara Drive Gallery | Premium Digital Showroom",
-  description: "High-end digital showroom and transaction platform for Opara Drive Gallery in Lagos, Nigeria.",
+  description: "High-end digital showroom and transaction platform for Opara Drive Gallery in 184 Iju Road, Fagba, Lagos, Nigeria 100001.",
 }
 
 export default async function Home(props: { searchParams: Promise<{ [key: string]: string | undefined }> }) {
@@ -399,7 +399,7 @@ export default async function Home(props: { searchParams: Promise<{ [key: string
               <ul className="space-y-4">
                 <li className="flex items-start gap-3 text-neutral-400 text-sm">
                   <MapPin className="w-5 h-5 text-[#D4AF37] shrink-0 mt-0.5" />
-                  <span>Victoria Island,<br />Lagos, Nigeria</span>
+                  <span>Victoria Island,<br />184 Iju Road, Fagba, Lagos, Nigeria 100001</span>
                 </li>
                 <li className="flex items-center gap-3 text-neutral-400 text-sm">
                   <Mail className="w-5 h-5 text-[#D4AF37] shrink-0" />
@@ -417,7 +417,7 @@ export default async function Home(props: { searchParams: Promise<{ [key: string
           <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-center md:text-left">
               <p className="text-neutral-500 text-sm">
-                © {new Date().getFullYear()} Opara Drive Gallery. All rights reserved.
+                © {new Date().getFullYear()} OPARA ELITE LINKS AND VENTURES. All rights reserved.
               </p>
               <span className="hidden md:block text-neutral-800">•</span>
               <p className="text-neutral-500 text-sm">
