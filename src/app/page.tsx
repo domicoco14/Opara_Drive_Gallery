@@ -9,6 +9,7 @@ import Preloader from '@/components/Preloader'
 import BirthdaySplash from '@/components/BirthdaySplash'
 import ScrollRevealWrapper from '@/components/ScrollRevealWrapper'
 import MagneticWrapper from '@/components/MagneticWrapper'
+import PreOrderModal from '@/components/PreOrderModal'
 
 export const metadata = {
   title: "Opara Drive Gallery | Premium Digital Showroom",
@@ -203,6 +204,7 @@ export default async function Home(props: { searchParams: Promise<{ [key: string
   return (
     <div className="min-h-screen bg-neutral-950 text-neutral-50 font-sans selection:bg-[#D4AF37] selection:text-white relative">
       <BirthdaySplash />
+      <PreOrderModal />
       <Preloader />
       {/* Background Glowing Orbs for Glassmorphism */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
@@ -375,10 +377,10 @@ export default async function Home(props: { searchParams: Promise<{ [key: string
             <div>
               <h4 className="text-white font-semibold uppercase tracking-wider mb-6 text-sm">Showroom</h4>
               <ul className="space-y-3">
-                <li><Link href="#" className="text-neutral-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2"><ChevronRight className="w-3 h-3" /> All Inventory</Link></li>
-                <li><Link href="#" className="text-neutral-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Brand New Cars</Link></li>
-                <li><Link href="#" className="text-neutral-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Foreign Used Cars</Link></li>
-                <li><Link href="#" className="text-neutral-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Pre-Order Service</Link></li>
+                <li><Link href="/#inventory" className="text-neutral-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2"><ChevronRight className="w-3 h-3" /> All Inventory</Link></li>
+                <li><Link href="/?condition=brand-new#inventory" className="text-neutral-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Brand New Cars</Link></li>
+                <li><Link href="/?condition=foreign-used#inventory" className="text-neutral-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Foreign Used Cars</Link></li>
+                <li><Link href="?preorder=true" scroll={false} className="text-neutral-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Pre-Order Service</Link></li>
               </ul>
             </div>
 
