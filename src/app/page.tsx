@@ -198,16 +198,16 @@ export default async function Home(props: { searchParams: Promise<{ [key: string
       return match;
     }) as any[]
   }
-  const phoneNumber = "2347087700495"
+  const phoneNumber = "2349032903453"
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-neutral-50 font-sans selection:bg-red-600 selection:text-white relative">
+    <div className="min-h-screen bg-neutral-950 text-neutral-50 font-sans selection:bg-[#D4AF37] selection:text-white relative">
       <BirthdaySplash />
       <Preloader />
       {/* Background Glowing Orbs for Glassmorphism */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-red-600/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3"></div>
-        <div className="absolute bottom-0 left-0 w-[50vw] h-[50vw] bg-red-600/10 rounded-full blur-[120px] translate-y-1/3 -translate-x-1/3"></div>
+        <div className="absolute top-0 right-0 w-[50vw] h-[50vw] bg-[#D4AF37]/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3"></div>
+        <div className="absolute bottom-0 left-0 w-[50vw] h-[50vw] bg-[#D4AF37]/10 rounded-full blur-[120px] translate-y-1/3 -translate-x-1/3"></div>
       </div>
 
       <PremiumHero searchParams={searchParams} />
@@ -228,7 +228,7 @@ export default async function Home(props: { searchParams: Promise<{ [key: string
             </div>
 
             {error && cars.length === 0 && (
-              <div className="p-6 bg-red-950/30 border border-red-900/50 text-red-500 rounded-2xl flex items-start gap-4 mb-8">
+              <div className="p-6 bg-[#D4AF37]/30 border border-[#D4AF37]/50 text-[#D4AF37] rounded-2xl flex items-start gap-4 mb-8">
                 <Info className="w-5 h-5 mt-0.5 shrink-0" />
                 <div>
                   <h3 className="font-semibold mb-1">Error fetching inventory</h3>
@@ -244,7 +244,7 @@ export default async function Home(props: { searchParams: Promise<{ [key: string
                   <Search className="w-6 h-6" />
                 </div>
                 <p className="text-neutral-400 font-medium">No vehicles match your exact search.</p>
-                <Link href="/" className="text-red-500 hover:text-red-400 font-medium text-sm mt-4 inline-block transition">
+                <Link href="/" className="text-[#D4AF37] hover:text-red-400 font-medium text-sm mt-4 inline-block transition">
                   View All Inventory
                 </Link>
               </div>
@@ -257,7 +257,7 @@ export default async function Home(props: { searchParams: Promise<{ [key: string
                 
                 return (
                   <ScrollRevealWrapper key={car.id} delay={(cars.indexOf(car) % 6) * 0.1}>
-                    <div className="h-full group bg-[#1E293B]/40 backdrop-blur-xl border border-white/5 rounded-2xl overflow-hidden hover:border-red-500/30 hover:bg-[#1E293B]/80 hover:-translate-y-2 transition-all duration-300 flex flex-col shadow-md hover:shadow-2xl hover:shadow-red-900/20 cursor-pointer">
+                    <div className="h-full group bg-[#1E293B]/40 backdrop-blur-xl border border-white/5 rounded-2xl overflow-hidden hover:border-[#D4AF37]/30 hover:bg-[#1E293B]/80 hover:-translate-y-2 transition-all duration-300 flex flex-col shadow-md hover:shadow-2xl hover:shadow-[#D4AF37]/20 cursor-pointer">
                       <div className="relative h-56 bg-neutral-900/50 overflow-hidden">
                       {car.images?.[0] ? (
                         <Image 
@@ -285,7 +285,7 @@ export default async function Home(props: { searchParams: Promise<{ [key: string
                           </span>
                         )}
                         {car.status === 'Sold' && (
-                          <span className="bg-red-500/20 text-red-400 text-xs font-semibold px-2.5 py-1 rounded-md border border-red-500/30 shadow-lg">
+                          <span className="bg-red-500/20 text-red-400 text-xs font-semibold px-2.5 py-1 rounded-md border border-[#D4AF37]/30 shadow-lg">
                             Sold Out
                           </span>
                         )}
@@ -294,7 +294,7 @@ export default async function Home(props: { searchParams: Promise<{ [key: string
                     
                     <div className="p-5 flex-1 flex flex-col">
                       <div className="flex-1">
-                        <h3 className="text-xl font-serif font-bold uppercase tracking-tight mb-1 group-hover:text-red-500 transition-colors duration-300">
+                        <h3 className="text-xl font-serif font-bold uppercase tracking-tight mb-1 group-hover:text-[#D4AF37] transition-colors duration-300">
                           {car.year} {car.make} {car.model}
                         </h3>
                         <p className="text-neutral-400 text-sm font-medium">{car.body_type}</p>
@@ -317,7 +317,7 @@ export default async function Home(props: { searchParams: Promise<{ [key: string
                           <MessageCircle className="w-4 h-4" />
                           WhatsApp
                         </a>
-                        <Link href={`/?gallery=${car.id}`} scroll={false} className="flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white transition-all duration-300 py-3 rounded-xl font-bold text-sm shadow-lg shadow-red-600/20 hover:shadow-red-600/40">
+                        <Link href={`/?gallery=${car.id}`} scroll={false} className="flex items-center justify-center gap-2 bg-[#D4AF37] hover:bg-[#B89A30] text-white transition-all duration-300 py-3 rounded-xl font-bold text-sm shadow-lg shadow-[#D4AF37]/20 hover:shadow-[#D4AF37]/40">
                           View Gallery
                         </Link>
                       </div>
@@ -337,7 +337,7 @@ export default async function Home(props: { searchParams: Promise<{ [key: string
           <MessageCircle className="w-7 h-7" />
           <span className="absolute -top-1 -right-1 flex h-4 w-4">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-4 w-4 bg-red-600 border-2 border-[#25D366]"></span>
+            <span className="relative inline-flex rounded-full h-4 w-4 bg-[#D4AF37] border-2 border-[#25D366]"></span>
           </span>
         </a>
       </MagneticWrapper>
@@ -353,19 +353,19 @@ export default async function Home(props: { searchParams: Promise<{ [key: string
             {/* Brand Column */}
             <div className="space-y-4">
               <Link href="/" className="text-3xl font-serif font-bold tracking-tight uppercase inline-block">
-                Opara Drive <span className="text-red-600">Gallery</span>
+                Opara Drive <span className="text-[#D4AF37]">Gallery</span>
               </Link>
               <p className="text-neutral-400 text-sm leading-relaxed max-w-xs">
                 Lagos' most exclusive destination for luxury, performance, and imported vehicles. Drive your dream today.
               </p>
               <div className="flex gap-4 pt-2">
-                <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-neutral-400 hover:bg-red-600 hover:text-white transition-all duration-300 border border-white/5">
+                <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-neutral-400 hover:bg-[#D4AF37] hover:text-white transition-all duration-300 border border-white/5">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-neutral-400 hover:bg-red-600 hover:text-white transition-all duration-300 border border-white/5">
+                <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-neutral-400 hover:bg-[#D4AF37] hover:text-white transition-all duration-300 border border-white/5">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
                 </a>
-                <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-neutral-400 hover:bg-red-600 hover:text-white transition-all duration-300 border border-white/5">
+                <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-neutral-400 hover:bg-[#D4AF37] hover:text-white transition-all duration-300 border border-white/5">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
                 </a>
               </div>
@@ -375,10 +375,10 @@ export default async function Home(props: { searchParams: Promise<{ [key: string
             <div>
               <h4 className="text-white font-semibold uppercase tracking-wider mb-6 text-sm">Showroom</h4>
               <ul className="space-y-3">
-                <li><Link href="#" className="text-neutral-400 hover:text-red-500 transition-colors text-sm flex items-center gap-2"><ChevronRight className="w-3 h-3" /> All Inventory</Link></li>
-                <li><Link href="#" className="text-neutral-400 hover:text-red-500 transition-colors text-sm flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Brand New Cars</Link></li>
-                <li><Link href="#" className="text-neutral-400 hover:text-red-500 transition-colors text-sm flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Foreign Used Cars</Link></li>
-                <li><Link href="#" className="text-neutral-400 hover:text-red-500 transition-colors text-sm flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Pre-Order Service</Link></li>
+                <li><Link href="#" className="text-neutral-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2"><ChevronRight className="w-3 h-3" /> All Inventory</Link></li>
+                <li><Link href="#" className="text-neutral-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Brand New Cars</Link></li>
+                <li><Link href="#" className="text-neutral-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Foreign Used Cars</Link></li>
+                <li><Link href="#" className="text-neutral-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Pre-Order Service</Link></li>
               </ul>
             </div>
 
@@ -386,10 +386,10 @@ export default async function Home(props: { searchParams: Promise<{ [key: string
             <div>
               <h4 className="text-white font-semibold uppercase tracking-wider mb-6 text-sm">Support</h4>
               <ul className="space-y-3">
-                <li><Link href="#" className="text-neutral-400 hover:text-red-500 transition-colors text-sm flex items-center gap-2"><ChevronRight className="w-3 h-3" /> About Us</Link></li>
-                <li><Link href="#" className="text-neutral-400 hover:text-red-500 transition-colors text-sm flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Financing Options</Link></li>
-                <li><Link href="#" className="text-neutral-400 hover:text-red-500 transition-colors text-sm flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Terms of Service</Link></li>
-                <li><Link href="/admin" className="text-neutral-400 hover:text-red-500 transition-colors text-sm flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Admin Login</Link></li>
+                <li><Link href="#" className="text-neutral-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2"><ChevronRight className="w-3 h-3" /> About Us</Link></li>
+                <li><Link href="#" className="text-neutral-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Financing Options</Link></li>
+                <li><Link href="#" className="text-neutral-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Terms of Service</Link></li>
+                <li><Link href="/admin" className="text-neutral-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Admin Login</Link></li>
               </ul>
             </div>
 
@@ -398,15 +398,15 @@ export default async function Home(props: { searchParams: Promise<{ [key: string
               <h4 className="text-white font-semibold uppercase tracking-wider mb-6 text-sm">Contact Us</h4>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3 text-neutral-400 text-sm">
-                  <MapPin className="w-5 h-5 text-red-600 shrink-0 mt-0.5" />
+                  <MapPin className="w-5 h-5 text-[#D4AF37] shrink-0 mt-0.5" />
                   <span>Victoria Island,<br />Lagos, Nigeria</span>
                 </li>
                 <li className="flex items-center gap-3 text-neutral-400 text-sm">
-                  <Mail className="w-5 h-5 text-red-600 shrink-0" />
-                  <a href="mailto:contact@oparadrivegallery.com" className="hover:text-white transition-colors">contact@oparadrivegallery.com</a>
+                  <Mail className="w-5 h-5 text-[#D4AF37] shrink-0" />
+                  <a href="mailto:opara_drive_gallery" className="hover:text-white transition-colors">opara_drive_gallery</a>
                 </li>
                 <li className="flex items-center gap-3 text-neutral-400 text-sm">
-                  <Phone className="w-5 h-5 text-red-600 shrink-0" />
+                  <Phone className="w-5 h-5 text-[#D4AF37] shrink-0" />
                   <a href={`https://wa.me/${phoneNumber}`} className="hover:text-white transition-colors">+234 708 770 0495</a>
                 </li>
               </ul>

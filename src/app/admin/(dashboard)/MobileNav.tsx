@@ -28,7 +28,7 @@ export default function MobileNav() {
             href={item.href} 
             className={`flex flex-col items-center gap-1 p-2 rounded-lg transition ${
               isActive 
-                ? 'text-red-500' 
+                ? 'text-[#D4AF37]' 
                 : 'text-neutral-500 hover:text-white'
             }`}
           >
@@ -39,7 +39,7 @@ export default function MobileNav() {
       })}
       
       <form action="/auth/signout" method="post" className="flex flex-col items-center">
-        <button className="flex flex-col items-center gap-1 p-2 rounded-lg text-neutral-500 hover:text-red-500 transition">
+        <button className="flex flex-col items-center gap-1 p-2 rounded-lg text-neutral-500 hover:text-[#D4AF37] transition">
           <LogOut className="w-6 h-6" />
           <span className="text-[10px] font-medium">Logout</span>
         </button>

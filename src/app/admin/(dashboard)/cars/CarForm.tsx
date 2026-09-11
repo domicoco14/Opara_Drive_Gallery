@@ -112,7 +112,7 @@ export default function CarForm({ initialData }: { initialData?: any }) {
                 <button 
                   type="button" 
                   onClick={() => handleRemoveExistingImage(i)}
-                  className="absolute top-2 right-2 bg-red-600 text-white text-xs px-2 py-1 rounded shadow opacity-0 group-hover:opacity-100 transition-opacity"
+                  className="absolute top-2 right-2 bg-[#D4AF37] text-white text-xs px-2 py-1 rounded shadow opacity-0 group-hover:opacity-100 transition-opacity"
                 >
                   Remove
                 </button>
@@ -128,13 +128,13 @@ export default function CarForm({ initialData }: { initialData?: any }) {
             name="image_files" 
             multiple 
             accept="image/*"
-            className="w-full bg-neutral-950 border border-neutral-800 rounded-xl p-3 text-sm focus:border-red-600 focus:ring-1 focus:ring-red-600 outline-none transition file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-red-600 file:text-white hover:file:bg-red-700"
+            className="w-full bg-neutral-950 border border-neutral-800 rounded-xl p-3 text-sm focus:border-red-600 focus:ring-1 focus:ring-red-600 outline-none transition file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-[#D4AF37] file:text-white hover:file:bg-red-700"
           />
         </div>
       </div>
 
       <div className="flex justify-end pt-4">
-        <button disabled={loading} type="submit" className="bg-red-600 hover:bg-red-700 disabled:opacity-50 text-white px-8 py-3 rounded-xl font-bold transition shadow-lg shadow-red-600/20">
+        <button disabled={loading} type="submit" className="bg-[#D4AF37] hover:bg-[#B89A30] disabled:opacity-50 text-white px-8 py-3 rounded-xl font-bold transition shadow-lg shadow-[#D4AF37]/20">
           {loading ? 'Saving...' : (initialData ? 'Update Vehicle' : 'Add Vehicle')}
         </button>
       </div>

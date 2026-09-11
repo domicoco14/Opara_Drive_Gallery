@@ -18,7 +18,7 @@ export default async function AdminDashboard() {
           <h1 className="text-3xl font-bold tracking-tight uppercase">Inventory</h1>
           <p className="text-neutral-500 mt-1">Manage your showroom fleet ({cars?.length || 0} vehicles)</p>
         </div>
-        <Link href="/admin/cars/new" className="bg-red-600 hover:bg-red-700 text-white px-5 py-2.5 rounded-xl font-medium transition flex items-center gap-2 shadow-lg shadow-red-600/20">
+        <Link href="/admin/cars/new" className="bg-[#D4AF37] hover:bg-[#B89A30] text-white px-5 py-2.5 rounded-xl font-medium transition flex items-center gap-2 shadow-lg shadow-[#D4AF37]/20">
           <Plus className="w-5 h-5" />
           Add Vehicle
         </Link>
@@ -72,7 +72,7 @@ export default async function AdminDashboard() {
                   </td>
                   <td className="px-6 py-4">
                     <span className={`px-2.5 py-1 rounded text-xs font-medium border ${
-                      car.status === 'Available' ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20' : 'bg-red-500/10 text-red-400 border-red-500/20'
+                      car.status === 'Available' ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20' : 'bg-red-500/10 text-red-400 border-[#D4AF37]/20'
                     }`}>
                       {car.status}
                     </span>
@@ -86,7 +86,7 @@ export default async function AdminDashboard() {
                         'use server'
                         await deleteCar(car.id)
                       }}>
-                        <button type="submit" className="p-2 text-neutral-400 hover:text-red-500 hover:bg-red-500/10 rounded-lg transition">
+                        <button type="submit" className="p-2 text-neutral-400 hover:text-[#D4AF37] hover:bg-red-500/10 rounded-lg transition">
                           <Trash2 className="w-4 h-4" />
                         </button>
                       </form>

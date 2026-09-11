@@ -20,7 +20,7 @@ export default async function SettingsPage() {
         {/* Profile Info */}
         <div>
           <h2 className="text-lg font-bold uppercase tracking-wider flex items-center gap-2 mb-6">
-            <User className="w-5 h-5 text-red-500" />
+            <User className="w-5 h-5 text-[#D4AF37]" />
             Account Details
           </h2>
           
@@ -42,7 +42,7 @@ export default async function SettingsPage() {
         {/* Security Info */}
         <div>
           <h2 className="text-lg font-bold uppercase tracking-wider flex items-center gap-2 mb-6">
-            <Shield className="w-5 h-5 text-red-500" />
+            <Shield className="w-5 h-5 text-[#D4AF37]" />
             Security
           </h2>
           

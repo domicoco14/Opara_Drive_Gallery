@@ -39,7 +39,7 @@ export default function BirthdaySplash() {
               recycle={false}
               numberOfPieces={500}
               gravity={0.15}
-              colors={['#FF1D25', '#ffffff', '#222222', '#FACC15']}
+              colors={['#D4AF37', '#ffffff', '#111111', '#FACC15']}
             />
           )}
 
@@ -55,14 +55,14 @@ export default function BirthdaySplash() {
             <p className="text-xl md:text-3xl font-light text-neutral-300 mb-8">
               Welcome to your new digital empire,
               <br />
-              <span className="font-semibold text-red-500 block mt-2">Opara Drive Gallery</span>
+              <span className="font-semibold text-[#D4AF37] block mt-2">Opara Drive Gallery</span>
             </p>
 
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={() => setShow(false)}
-              className="px-8 py-4 bg-red-600 hover:bg-red-700 rounded-full font-bold uppercase tracking-widest text-sm transition-colors shadow-[0_0_20px_rgba(220,38,38,0.4)]"
+              className="px-8 py-4 bg-[#D4AF37] hover:bg-[#B89A30] rounded-full font-bold uppercase tracking-widest text-sm transition-colors shadow-[0_0_20px_rgba(212,175,55,0.4)]"
             >
               Enter Showroom
             </motion.button>

@@ -39,7 +39,7 @@ export default function LightboxModal({ car }: { car: any }) {
 
   if (!car) return null
 
-  const phoneNumber = "2347087700495"
+  const phoneNumber = "2349032903453"
   const waMessage = `Hello Opara Drive Gallery, I am interested in purchasing the ${car.year} ${car.make} ${car.model}. Is it still available?${car.images?.[0] ? `\n\nVehicle Image: ${car.images[0]}` : ''}`
   const waLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(waMessage)}`
 
@@ -52,7 +52,7 @@ export default function LightboxModal({ car }: { car: any }) {
       <div className="absolute top-0 left-0 right-0 p-6 flex justify-between items-start z-50 pointer-events-none">
         <div className="text-white drop-shadow-md pointer-events-auto max-w-[70%]">
           <h2 className="text-2xl md:text-3xl font-bold uppercase tracking-tight">{car.year} {car.make} {car.model}</h2>
-          <p className="text-red-500 font-medium tracking-widest uppercase text-sm mt-1">₦{Number(car.price_ngn).toLocaleString()}</p>
+          <p className="text-[#D4AF37] font-medium tracking-widest uppercase text-sm mt-1">₦{Number(car.price_ngn).toLocaleString()}</p>
         </div>
         <button 
           onClick={(e) => { e.stopPropagation(); handleClose(); }}

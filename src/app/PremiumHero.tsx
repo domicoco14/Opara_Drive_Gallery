@@ -39,7 +39,7 @@ function useMouseParallax() {
 
 export default function PremiumHero({ searchParams }: { searchParams: any }) {
   const { xBackground, yBackground, xForeground, yForeground } = useMouseParallax()
-  const phoneNumber = "2347087700495"
+  const phoneNumber = "2349032903453"
 
   // Animation orchestration variants
   const containerVariants = {
@@ -97,7 +97,7 @@ export default function PremiumHero({ searchParams }: { searchParams: any }) {
       >
         <Link href="/" className="flex items-center gap-2">
           <span className="text-lg md:text-xl font-bold tracking-tighter text-white whitespace-nowrap">
-            Opara Drive <span className="text-[#FF1D25]">GALLERY</span>
+            Opara Drive <span className="text-[#D4AF37]">GALLERY</span>
           </span>
         </Link>
         
@@ -120,7 +120,7 @@ export default function PremiumHero({ searchParams }: { searchParams: any }) {
             href={`https://wa.me/${phoneNumber}`} 
             target="_blank" 
             rel="noopener noreferrer" 
-            className="group flex items-center gap-2 text-xs md:text-sm font-medium bg-[#FF1D25] text-white px-4 md:px-5 py-2.5 rounded-full transition-all duration-400 shadow-[0_0_20px_rgba(255,29,37,0.2)] hover:shadow-[0_0_30px_rgba(255,29,37,0.4)] hover:-translate-y-[2px]"
+            className="group flex items-center gap-2 text-xs md:text-sm font-medium bg-[#D4AF37] text-white px-4 md:px-5 py-2.5 rounded-full transition-all duration-400 shadow-[0_0_20px_rgba(212,175,55,0.2)] hover:shadow-[0_0_30px_rgba(212,175,55,0.4)] hover:-translate-y-[2px]"
           >
             <MessageCircle className="w-4 h-4 transition-transform group-hover:scale-110 shrink-0" />
             <span className="hidden sm:inline">Contact Us</span>
@@ -172,7 +172,7 @@ export default function PremiumHero({ searchParams }: { searchParams: any }) {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, scale: [1, 1.05, 1] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] bg-[#DC2626]/10 blur-[120px] rounded-full z-10 pointer-events-none" 
+          className="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] bg-[#D4AF37]/10 blur-[120px] rounded-full z-10 pointer-events-none" 
         />
 
         {/* Foreground Content */}
@@ -185,11 +185,18 @@ export default function PremiumHero({ searchParams }: { searchParams: any }) {
         >
           <motion.h1 
             variants={itemFadeUp}
-            className="text-5xl sm:text-6xl md:text-[7.5rem] font-serif font-bold tracking-tight mb-6 md:mb-8 uppercase leading-[0.9] text-white drop-shadow-xl"
+            className="text-5xl sm:text-6xl md:text-[7.5rem] font-serif font-bold tracking-tight mb-4 md:mb-6 uppercase leading-[0.9] text-white drop-shadow-xl"
           >
-            Drive Your <br className="md:hidden" />
-            Dream
+            OPARA <br className="md:hidden" />
+            DRIVE GALLERY
           </motion.h1>
+
+          <motion.p 
+            variants={itemFadeUp}
+            className="text-xl md:text-3xl text-[#D4AF37] italic font-serif mb-6 md:mb-10 drop-shadow-md"
+          >
+            ...driven by excellence...
+          </motion.p>
 
           <motion.p 
             variants={itemFadeIn}
@@ -201,7 +208,7 @@ export default function PremiumHero({ searchParams }: { searchParams: any }) {
           {/* Premium Liquid Glass Search Bar */}
           <motion.form 
             variants={itemFadeUp}
-            className="group max-w-xl mx-auto flex items-center p-2 rounded-full transition-all duration-500 shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_16px_48px_rgba(0,0,0,0.6)] focus-within:shadow-[0_0_40px_rgba(255,29,37,0.15)]"
+            className="group max-w-xl mx-auto flex items-center p-2 rounded-full transition-all duration-500 shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_16px_48px_rgba(0,0,0,0.6)] focus-within:shadow-[0_0_40px_rgba(212,175,55,0.15)]"
             style={{
               background: 'rgba(255, 255, 255, 0.03)',
               backdropFilter: 'blur(20px)',
@@ -228,7 +235,7 @@ export default function PremiumHero({ searchParams }: { searchParams: any }) {
             
             <button 
               type="submit" 
-              className="bg-[#FF1D25] text-white px-5 md:px-8 py-3 rounded-full font-bold uppercase tracking-widest text-xs md:text-sm transition-all duration-400 shadow-[0_0_20px_rgba(255,29,37,0.2)] hover:shadow-[0_0_30px_rgba(255,29,37,0.5)] hover:-translate-y-[2px] shrink-0"
+              className="bg-[#D4AF37] text-white px-5 md:px-8 py-3 rounded-full font-bold uppercase tracking-widest text-xs md:text-sm transition-all duration-400 shadow-[0_0_20px_rgba(212,175,55,0.2)] hover:shadow-[0_0_30px_rgba(212,175,55,0.5)] hover:-translate-y-[2px] shrink-0"
             >
               Search
             </button>

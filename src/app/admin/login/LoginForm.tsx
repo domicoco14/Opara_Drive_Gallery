@@ -16,7 +16,7 @@ export default function LoginForm() {
           name="email" 
           type="email" 
           required 
-          defaultValue="contact@oparadrivegallery.com"
+          defaultValue="opara_drive_gallery"
           className="w-full bg-neutral-900/50 border border-neutral-800 rounded-xl p-4 text-sm focus:border-red-600 focus:ring-1 focus:ring-red-600 outline-none transition placeholder:text-neutral-600"
           placeholder="admin@example.com"
         />
@@ -43,7 +43,7 @@ export default function LoginForm() {
         </div>
       </div>
 
-      <button type="submit" className="w-full bg-red-600 hover:bg-red-700 text-white transition-all duration-300 py-4 rounded-xl font-bold shadow-lg shadow-red-600/20 hover:shadow-red-600/40 uppercase tracking-widest text-sm mt-8">
+      <button type="submit" className="w-full bg-[#D4AF37] hover:bg-[#B89A30] text-white transition-all duration-300 py-4 rounded-xl font-bold shadow-lg shadow-[#D4AF37]/20 hover:shadow-[#D4AF37]/40 uppercase tracking-widest text-sm mt-8">
         Log In securely
       </button>
     </form>

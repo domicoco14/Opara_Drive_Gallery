@@ -30,7 +30,7 @@ export default function Preloader() {
             initial={{ opacity: 0.2, scale: 0.8 }}
             animate={{ opacity: 0.5, scale: 1.2 }}
             transition={{ duration: 2, repeat: Infinity, repeatType: 'reverse' }}
-            className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(220,38,38,0.15)_0%,transparent_50%)]"
+            className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.15)_0%,transparent_50%)]"
           />
 
           <motion.div
@@ -40,14 +40,14 @@ export default function Preloader() {
             className="relative z-10 flex flex-col items-center"
           >
             <h1 className="text-4xl md:text-6xl font-serif font-bold tracking-tight uppercase">
-              Opara Drive <span className="text-red-600">Gallery</span>
+              Opara Drive <span className="text-[#D4AF37]">Gallery</span>
             </h1>
             
             <motion.div 
               className="w-32 h-[2px] bg-red-900/30 mt-6 rounded-full overflow-hidden"
             >
               <motion.div
-                className="h-full bg-red-600 rounded-full"
+                className="h-full bg-[#D4AF37] rounded-full"
                 initial={{ width: '0%' }}
                 animate={{ width: '100%' }}
                 transition={{ duration: 1.5, ease: 'easeInOut', delay: 0.4 }}
