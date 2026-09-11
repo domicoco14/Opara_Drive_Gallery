@@ -388,9 +388,9 @@ export default async function Home(props: { searchParams: Promise<{ [key: string
             <div>
               <h4 className="text-white font-semibold uppercase tracking-wider mb-6 text-sm">Support</h4>
               <ul className="space-y-3">
-                <li><Link href="#" className="text-neutral-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2"><ChevronRight className="w-3 h-3" /> About Us</Link></li>
-                <li><Link href="#" className="text-neutral-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Financing Options</Link></li>
-                <li><Link href="#" className="text-neutral-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Terms of Service</Link></li>
+                <li><Link href="#about" className="text-neutral-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2"><ChevronRight className="w-3 h-3" /> About Us</Link></li>
+                <li><a href="https://wa.me/2349032903453?text=Hello%20Opara%20Drive%20Gallery,%20I%20would%20like%20to%20inquire%20about%20your%20car%20financing%20options." target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Financing Options</a></li>
+                <li><Link href="/terms" className="text-neutral-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Terms of Service</Link></li>
                 <li><Link href="/admin" className="text-neutral-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Admin Login</Link></li>
               </ul>
             </div>
