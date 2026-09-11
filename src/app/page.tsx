@@ -2,7 +2,7 @@ import { createClient } from '@/utils/supabase/server'
 import { cookies } from 'next/headers'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Search, MapPin, Phone, Mail, SlidersHorizontal, ChevronRight, MessageCircle, Info, User } from 'lucide-react'
+import { Search, MapPin, Phone, Mail, SlidersHorizontal, ChevronRight, MessageCircle, Info, User, Instagram, Facebook, Video } from 'lucide-react'
 import LightboxModal from './LightboxModal'
 import PremiumHero from './PremiumHero'
 import Preloader from '@/components/Preloader'
@@ -215,7 +215,7 @@ export default async function Home(props: { searchParams: Promise<{ [key: string
       {/* Main Content */}
       <main id="inventory" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="flex flex-col lg:flex-row gap-8">
-          
+
 
 
           {/* Grid */}
@@ -254,73 +254,73 @@ export default async function Home(props: { searchParams: Promise<{ [key: string
               {cars?.map((car) => {
                 const messageText = `Hi Opara Drive Gallery, I'm interested in the ${car.year} ${car.make} ${car.model} listed on your site.${car.images?.[0] ? `\n\nVehicle Image: ${car.images[0]}` : ''}`
                 const waLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(messageText)}`
-                
+
                 return (
                   <ScrollRevealWrapper key={car.id} delay={(cars.indexOf(car) % 6) * 0.1}>
                     <div className="h-full group bg-[#1E293B]/40 backdrop-blur-xl border border-white/5 rounded-2xl overflow-hidden hover:border-[#D4AF37]/30 hover:bg-[#1E293B]/80 hover:-translate-y-2 transition-all duration-300 flex flex-col shadow-md hover:shadow-2xl hover:shadow-[#D4AF37]/20 cursor-pointer">
                       <div className="relative h-56 bg-neutral-900/50 overflow-hidden">
-                      {car.images?.[0] ? (
-                        <Image 
-                          src={car.images[0]} 
-                          alt={`${car.make} ${car.model}`} 
-                          fill 
-                          className="object-cover group-hover:scale-105 transition-transform duration-700" 
-                        />
-                      ) : (
-                        <div className="absolute inset-0 flex items-center justify-center text-neutral-600 bg-neutral-900">
-                          <Image src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=800" alt="Placeholder" fill className="object-cover opacity-20 grayscale" />
-                          <span className="relative z-10 font-medium text-xs tracking-widest uppercase">No Image</span>
-                        </div>
-                      )}
-                      {/* Gradient Overlay for better tag readability */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 z-10 pointer-events-none"></div>
-                      
-                      <div className="absolute top-4 left-4 flex gap-2 z-20">
-                        <span className="bg-neutral-950/80 backdrop-blur text-xs font-semibold px-2.5 py-1 rounded-md border border-neutral-800 shadow-lg">
-                          {car.mileage_type}
-                        </span>
-                        {car.status === 'Available' && (
-                          <span className="bg-emerald-500/20 text-emerald-400 text-xs font-semibold px-2.5 py-1 rounded-md border border-emerald-500/30 shadow-lg">
-                            Available
-                          </span>
-                        )}
-                        {car.status === 'Sold' && (
-                          <span className="bg-red-500/20 text-red-400 text-xs font-semibold px-2.5 py-1 rounded-md border border-[#D4AF37]/30 shadow-lg">
-                            Sold Out
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                    
-                    <div className="p-5 flex-1 flex flex-col">
-                      <div className="flex-1">
-                        <h3 className="text-xl font-serif font-bold uppercase tracking-tight mb-1 group-hover:text-[#D4AF37] transition-colors duration-300">
-                          {car.year} {car.make} {car.model}
-                        </h3>
-                        <p className="text-neutral-400 text-sm font-medium">{car.body_type}</p>
-                      </div>
-                      
-                      <div className="mt-6 mb-6">
-                        <div className="text-2xl font-light tracking-tight">
-                          <span className="text-neutral-500 text-lg mr-1 font-medium">₦</span>
-                          {Number(car.price_ngn).toLocaleString()}
-                        </div>
-                        {car.price_usd && (
-                          <div className="text-xs text-neutral-500 font-medium mt-1">
-                            ≈ ${Number(car.price_usd).toLocaleString()} USD
+                        {car.images?.[0] ? (
+                          <Image
+                            src={car.images[0]}
+                            alt={`${car.make} ${car.model}`}
+                            fill
+                            className="object-cover group-hover:scale-105 transition-transform duration-700"
+                          />
+                        ) : (
+                          <div className="absolute inset-0 flex items-center justify-center text-neutral-600 bg-neutral-900">
+                            <Image src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=800" alt="Placeholder" fill className="object-cover opacity-20 grayscale" />
+                            <span className="relative z-10 font-medium text-xs tracking-widest uppercase">No Image</span>
                           </div>
                         )}
+                        {/* Gradient Overlay for better tag readability */}
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/30 z-10 pointer-events-none"></div>
+
+                        <div className="absolute top-4 left-4 flex gap-2 z-20">
+                          <span className="bg-neutral-950/80 backdrop-blur text-xs font-semibold px-2.5 py-1 rounded-md border border-neutral-800 shadow-lg">
+                            {car.mileage_type}
+                          </span>
+                          {car.status === 'Available' && (
+                            <span className="bg-emerald-500/20 text-emerald-400 text-xs font-semibold px-2.5 py-1 rounded-md border border-emerald-500/30 shadow-lg">
+                              Available
+                            </span>
+                          )}
+                          {car.status === 'Sold' && (
+                            <span className="bg-red-500/20 text-red-400 text-xs font-semibold px-2.5 py-1 rounded-md border border-[#D4AF37]/30 shadow-lg">
+                              Sold Out
+                            </span>
+                          )}
+                        </div>
                       </div>
-                      
-                      <div className="grid grid-cols-2 gap-3 mt-auto">
-                        <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-white/5 text-[#25D366] hover:bg-[#25D366]/10 transition-all duration-300 py-3 rounded-xl font-medium text-sm border border-white/10 backdrop-blur-md hover:border-[#25D366]/30">
-                          <MessageCircle className="w-4 h-4" />
-                          WhatsApp
-                        </a>
-                        <Link href={`/?gallery=${car.id}`} scroll={false} className="flex items-center justify-center gap-2 bg-[#D4AF37] hover:bg-[#B89A30] text-white transition-all duration-300 py-3 rounded-xl font-bold text-sm shadow-lg shadow-[#D4AF37]/20 hover:shadow-[#D4AF37]/40">
-                          View Gallery
-                        </Link>
-                      </div>
+
+                      <div className="p-5 flex-1 flex flex-col">
+                        <div className="flex-1">
+                          <h3 className="text-xl font-serif font-bold uppercase tracking-tight mb-1 group-hover:text-[#D4AF37] transition-colors duration-300">
+                            {car.year} {car.make} {car.model}
+                          </h3>
+                          <p className="text-neutral-400 text-sm font-medium">{car.body_type}</p>
+                        </div>
+
+                        <div className="mt-6 mb-6">
+                          <div className="text-2xl font-light tracking-tight">
+                            <span className="text-neutral-500 text-lg mr-1 font-medium">₦</span>
+                            {Number(car.price_ngn).toLocaleString()}
+                          </div>
+                          {car.price_usd && (
+                            <div className="text-xs text-neutral-500 font-medium mt-1">
+                              ≈ ${Number(car.price_usd).toLocaleString()} USD
+                            </div>
+                          )}
+                        </div>
+
+                        <div className="grid grid-cols-2 gap-3 mt-auto">
+                          <a href={waLink} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-white/5 text-[#25D366] hover:bg-[#25D366]/10 transition-all duration-300 py-3 rounded-xl font-medium text-sm border border-white/10 backdrop-blur-md hover:border-[#25D366]/30">
+                            <MessageCircle className="w-4 h-4" />
+                            WhatsApp
+                          </a>
+                          <Link href={`/?gallery=${car.id}`} scroll={false} className="flex items-center justify-center gap-2 bg-[#D4AF37] hover:bg-[#B89A30] text-white transition-all duration-300 py-3 rounded-xl font-bold text-sm shadow-lg shadow-[#D4AF37]/20 hover:shadow-[#D4AF37]/40">
+                            View Gallery
+                          </Link>
+                        </div>
                       </div>
                     </div>
                   </ScrollRevealWrapper>
@@ -341,15 +341,15 @@ export default async function Home(props: { searchParams: Promise<{ [key: string
           </span>
         </a>
       </MagneticWrapper>
-      
+
       {/* Footer */}
       <footer className="relative mt-20 border-t border-white/10 bg-neutral-950/60 backdrop-blur-3xl overflow-hidden">
         {/* Subtle top glow */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-red-600/50 to-transparent"></div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-            
+
             {/* Brand Column */}
             <div className="space-y-4">
               <Link href="/" className="text-3xl font-serif font-bold tracking-tight uppercase inline-block">
@@ -360,13 +360,13 @@ export default async function Home(props: { searchParams: Promise<{ [key: string
               </p>
               <div className="flex gap-4 pt-2">
                 <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-neutral-400 hover:bg-[#D4AF37] hover:text-white transition-all duration-300 border border-white/5">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5" /><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" /><line x1="17.5" x2="17.51" y1="6.5" y2="6.5" /></svg>
                 </a>
                 <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-neutral-400 hover:bg-[#D4AF37] hover:text-white transition-all duration-300 border border-white/5">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" /></svg>
                 </a>
                 <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-neutral-400 hover:bg-[#D4AF37] hover:text-white transition-all duration-300 border border-white/5">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" /></svg>
                 </a>
               </div>
             </div>
@@ -399,15 +399,26 @@ export default async function Home(props: { searchParams: Promise<{ [key: string
               <ul className="space-y-4">
                 <li className="flex items-start gap-3 text-neutral-400 text-sm">
                   <MapPin className="w-5 h-5 text-[#D4AF37] shrink-0 mt-0.5" />
-                  <span>Victoria Island,<br />184 Iju Road, Fagba, Lagos, Nigeria 100001</span>
+                  <span>184 Iju Road, Fagba, Lagos, Nigeria 100001</span>
                 </li>
                 <li className="flex items-center gap-3 text-neutral-400 text-sm">
                   <Mail className="w-5 h-5 text-[#D4AF37] shrink-0" />
-                  <a href="mailto:opara_drive_gallery" className="hover:text-white transition-colors">opara_drive_gallery</a>
+                  <a href="mailto:opara_drive_gallery" className="hover:text-white transition-colors">opara_drive_gallery@gmail.com</a>
                 </li>
                 <li className="flex items-center gap-3 text-neutral-400 text-sm">
                   <Phone className="w-5 h-5 text-[#D4AF37] shrink-0" />
-                  <a href={`https://wa.me/${phoneNumber}`} className="hover:text-white transition-colors">+234 708 770 0495</a>
+                  <a href={`https://wa.me/2349032903453`} className="hover:text-white transition-colors">+234 903 290 3453</a>
+                </li>
+                <li className="flex items-center gap-3 text-neutral-400 text-sm pt-4">
+                  <a href="https://www.instagram.com/opara_drive_gallery/" target="_blank" rel="noopener noreferrer" className="hover:text-[#D4AF37] transition-colors p-2 bg-neutral-900 rounded-full border border-neutral-800">
+                    <Instagram className="w-4 h-4" />
+                  </a>
+                  <a href="https://www.facebook.com/share/1F3Yp9c8pe/" target="_blank" rel="noopener noreferrer" className="hover:text-[#D4AF37] transition-colors p-2 bg-neutral-900 rounded-full border border-neutral-800">
+                    <Facebook className="w-4 h-4" />
+                  </a>
+                  <a href="https://vm.tiktok.com/ZS9SuxCf2PVJp-RxUUk/" target="_blank" rel="noopener noreferrer" className="hover:text-[#D4AF37] transition-colors p-2 bg-neutral-900 rounded-full border border-neutral-800">
+                    <Video className="w-4 h-4" />
+                  </a>
                 </li>
               </ul>
             </div>
