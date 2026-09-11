@@ -11,13 +11,6 @@ export default function BirthdaySplash() {
   useEffect(() => {
     // Only run on client
     setWindowSize({ width: window.innerWidth, height: window.innerHeight });
-
-    // Auto-dismiss after 6 seconds
-    const timer = setTimeout(() => {
-      setShow(false);
-    }, 6000);
-
-    return () => clearTimeout(timer);
   }, []);
 
   return (
@@ -27,10 +20,9 @@ export default function BirthdaySplash() {
           key="birthday-splash"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          exit={{ opacity: 0, scale: 1.1 }}
-          transition={{ duration: 1, ease: 'easeInOut' }}
+          exit={{ opacity: 0, scale: 1.1, filter: 'blur(10px)' }}
+          transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
           className="fixed inset-0 z-[100000] flex flex-col items-center justify-center bg-neutral-950/90 backdrop-blur-md text-white overflow-hidden"
-          onClick={() => setShow(false)}
         >
           {windowSize.width > 0 && (
             <Confetti
@@ -50,7 +42,7 @@ export default function BirthdaySplash() {
             className="text-center px-6 max-w-3xl"
           >
             <h1 className="text-4xl md:text-7xl font-serif font-bold uppercase tracking-tight mb-4">
-              Happy Birthday! 🎉
+              Happy Birthday, Mr Opara! 🎉
             </h1>
             <p className="text-xl md:text-3xl font-light text-neutral-300 mb-8">
               Welcome to your new digital empire,
