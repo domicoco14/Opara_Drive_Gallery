@@ -28,7 +28,7 @@ export default function BirthdaySplash() {
             <Confetti
               width={windowSize.width}
               height={windowSize.height}
-              recycle={false}
+              recycle={true}
               numberOfPieces={500}
               gravity={0.15}
               colors={['#D4AF37', '#ffffff', '#111111', '#FACC15']}
