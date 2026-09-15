@@ -19,27 +19,39 @@ export default function BirthdaySplash() {
         <motion.div
           key="birthday-splash-container"
           className="fixed inset-0 z-[100000] flex flex-col items-center justify-center overflow-hidden"
-          // We don't animate the parent's exit layout, we just let it wait for children to finish
+          style={{ perspective: '2000px' }} // Add 3D perspective for the fold effect
           exit={{ transition: { staggerChildren: 0.1 } }}
         >
           {/* LEFT CURTAIN */}
           <motion.div
-            className="absolute top-0 left-0 w-1/2 h-full bg-neutral-950 border-r-2 border-[#D4AF37]/30 shadow-[10px_0_30px_rgba(0,0,0,0.5)] z-0"
-            initial={{ x: 0 }}
-            exit={{ x: '-100%', transition: { duration: 3, ease: 'easeInOut' } }}
+            className="absolute top-0 left-0 w-1/2 h-full z-0 border-r border-[#D4AF37]/20"
+            style={{ 
+              backgroundImage: 'url(/curtain.jpg)',
+              backgroundSize: '200% 100%',
+              backgroundPosition: 'left center',
+              transformOrigin: 'left center',
+            }}
+            initial={{ rotateY: 0 }}
+            exit={{ rotateY: 90, opacity: 0, transition: { duration: 3, ease: 'easeInOut' } }}
           />
 
           {/* RIGHT CURTAIN */}
           <motion.div
-            className="absolute top-0 right-0 w-1/2 h-full bg-neutral-950 border-l-2 border-[#D4AF37]/30 shadow-[-10px_0_30px_rgba(0,0,0,0.5)] z-0"
-            initial={{ x: 0 }}
-            exit={{ x: '100%', transition: { duration: 3, ease: 'easeInOut' } }}
+            className="absolute top-0 right-0 w-1/2 h-full z-0 border-l border-[#D4AF37]/20"
+            style={{ 
+              backgroundImage: 'url(/curtain.jpg)',
+              backgroundSize: '200% 100%',
+              backgroundPosition: 'right center',
+              transformOrigin: 'right center',
+            }}
+            initial={{ rotateY: 0 }}
+            exit={{ rotateY: -90, opacity: 0, transition: { duration: 3, ease: 'easeInOut' } }}
           />
 
           {/* CONTENT (Sits on top of the curtains) */}
           <motion.div
-            className="relative z-10 w-full h-full flex flex-col items-center justify-center"
-            exit={{ opacity: 0, scale: 1.1, filter: 'blur(10px)', transition: { duration: 0.4 } }}
+            className="relative z-10 w-full h-full flex flex-col items-center justify-center bg-black/60 backdrop-blur-sm"
+            exit={{ opacity: 0, scale: 1.1, filter: 'blur(10px)', transition: { duration: 0.8 } }}
           >
             {windowSize.width > 0 && (
               <Confetti
