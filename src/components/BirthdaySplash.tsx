@@ -26,14 +26,14 @@ export default function BirthdaySplash() {
           <motion.div
             className="absolute top-0 left-0 w-1/2 h-full bg-neutral-950 border-r-2 border-[#D4AF37]/30 shadow-[10px_0_30px_rgba(0,0,0,0.5)] z-0"
             initial={{ x: 0 }}
-            exit={{ x: '-100%', transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] } }}
+            exit={{ x: '-100%', transition: { duration: 3, ease: 'easeInOut' } }}
           />
 
           {/* RIGHT CURTAIN */}
           <motion.div
             className="absolute top-0 right-0 w-1/2 h-full bg-neutral-950 border-l-2 border-[#D4AF37]/30 shadow-[-10px_0_30px_rgba(0,0,0,0.5)] z-0"
             initial={{ x: 0 }}
-            exit={{ x: '100%', transition: { duration: 1.2, ease: [0.22, 1, 0.36, 1] } }}
+            exit={{ x: '100%', transition: { duration: 3, ease: 'easeInOut' } }}
           />
 
           {/* CONTENT (Sits on top of the curtains) */}
