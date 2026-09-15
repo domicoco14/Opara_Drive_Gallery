@@ -185,10 +185,9 @@ export default function PremiumHero({ searchParams }: { searchParams: any }) {
         >
           <motion.h1 
             variants={itemFadeUp}
-            className="text-6xl sm:text-7xl md:text-[7.5rem] lg:text-[8rem] font-serif font-bold tracking-tighter mb-4 md:mb-6 uppercase leading-[0.9] text-white drop-shadow-xl"
+            className="text-[12vw] sm:text-7xl md:text-[7.5rem] lg:text-[8rem] font-serif font-bold tracking-tight mb-4 md:mb-6 uppercase leading-[1.05] md:leading-[0.9] text-white drop-shadow-2xl"
           >
-            OPARA <br className="md:hidden" />
-            DRIVE <br className="md:hidden" />
+            OPARA DRIVE <br className="md:hidden" />
             GALLERY
           </motion.h1>
 
