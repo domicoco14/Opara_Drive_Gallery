@@ -29,7 +29,7 @@ export async function saveCar(formData: FormData, id?: string) {
         }
 
         // Get public URL
-        const { data: { publicUrl } } = supabase.storage.from('cars').getPublicUrl(fileName)
+        const { data: { publicUrl } } = supabase.storage.from('car-images').getPublicUrl(fileName)
         uploadedUrls.push(publicUrl)
       }
     }
