@@ -4,6 +4,7 @@ import { createClient } from '@/utils/supabase/server'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'
 import SidebarNav from './SidebarNav'
+import MobileNav from './MobileNav'
 import { signOut } from '../actions'
 
 export default async function AdminLayout({
@@ -57,6 +58,9 @@ export default async function AdminLayout({
           {children}
         </div>
       </main>
+
+      {/* Mobile Bottom Navigation */}
+      <MobileNav />
     </div>
   )
 }
