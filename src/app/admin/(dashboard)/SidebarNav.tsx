@@ -1,43 +1,37 @@
 'use client'
 
 import Link from 'next/link'
+import { LayoutDashboard, Car, Settings } from 'lucide-react'
 import { usePathname } from 'next/navigation'
-import { LayoutDashboard, CarFront, Settings } from 'lucide-react'
 
 export default function SidebarNav() {
   const pathname = usePathname()
 
   const navItems = [
-    { name: 'Dashboard', href: '/admin/overview', icon: LayoutDashboard },
-    { name: 'Inventory', href: '/admin', icon: CarFront },
+    { name: 'Dashboard', href: '/admin', icon: LayoutDashboard },
+    { name: 'Inventory', href: '/admin/inventory', icon: Car },
     { name: 'Settings', href: '/admin/settings', icon: Settings },
   ]
 
   return (
-    <div className="flex-1 py-8 px-4 flex flex-col gap-2">
+    <nav className="flex-1 px-4 py-8 space-y-2">
       {navItems.map((item) => {
-        const Icon = item.icon
-        // For inventory, exact match on /admin or starts with /admin/cars
-        const isActive = 
-          item.href === '/admin' 
-            ? pathname === '/admin' || pathname.startsWith('/admin/cars')
-            : pathname.startsWith(item.href)
-
+        const isActive = pathname === item.href
         return (
-          <Link 
-            key={item.name} 
-            href={item.href} 
-            className={`flex items-center gap-3 px-4 py-3 rounded-xl font-medium transition ${
+          <Link
+            key={item.name}
+            href={item.href}
+            className={`flex items-center gap-3 px-4 py-3 rounded-xl transition font-medium ${
               isActive 
-                ? 'bg-[#D4AF37]/10 text-[#D4AF37] border border-[#D4AF37]/20 shadow-inner' 
-                : 'text-neutral-500 hover:bg-white/5 hover:text-white border border-transparent'
+                ? 'bg-[#D4AF37]/10 text-[#D4AF37] border border-[#D4AF37]/20' 
+                : 'text-neutral-400 hover:text-white hover:bg-neutral-900'
             }`}
           >
-            <Icon className="w-5 h-5" />
+            <item.icon className={`w-5 h-5 ${isActive ? 'text-[#D4AF37]' : 'text-neutral-500'}`} />
             {item.name}
           </Link>
         )
       })}
-    </div>
+    </nav>
   )
 }

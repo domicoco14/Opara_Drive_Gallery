@@ -1,9 +1,10 @@
-import { redirect } from 'next/navigation'
+import Link from 'next/link'
+import { LogOut } from 'lucide-react'
 import { createClient } from '@/utils/supabase/server'
 import { cookies } from 'next/headers'
-import Link from 'next/link'
+import { redirect } from 'next/navigation'
+import SidebarNav from './SidebarNav'
 import { signOut } from '../actions'
-import { CarFront, Settings, LogOut, LayoutDashboard } from 'lucide-react'
 
 export default async function AdminLayout({
   children,
@@ -12,7 +13,7 @@ export default async function AdminLayout({
 }) {
   const cookieStore = await cookies()
   const supabase = createClient(cookieStore)
-  
+
   const { data: { user } } = await supabase.auth.getUser()
 
   if (!user) {
@@ -20,51 +21,39 @@ export default async function AdminLayout({
   }
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-neutral-50 font-sans selection:bg-[#D4AF37] selection:text-black flex flex-col md:flex-row relative overflow-hidden">
-      
-      {/* Subtle Background Glow */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-        <div className="absolute top-[-20%] left-[-10%] w-[50vw] h-[50vw] bg-[#D4AF37]/5 rounded-full blur-[120px]"></div>
-      </div>
-
-      {/* Sidebar Navigation */}
-      <aside className="relative z-20 w-full md:w-72 bg-neutral-900/50 backdrop-blur-xl border-b md:border-b-0 md:border-r border-white/10 flex flex-col shadow-2xl">
-        <div className="p-8 border-b border-white/5">
-          <Link href="/admin" className="text-2xl font-serif font-bold text-white uppercase tracking-wider block">
+    <div className="min-h-screen bg-[#0a0a0a] text-neutral-50 flex font-sans selection:bg-[#D4AF37] selection:text-black">
+      {/* Sidebar */}
+      <aside className="w-64 border-r border-neutral-900 bg-[#0a0a0a] flex flex-col hidden md:flex sticky top-0 h-screen">
+        <div className="h-20 flex items-center px-8 border-b border-neutral-900">
+          <Link href="/" className="text-xl font-black tracking-tighter uppercase">
             Opara <span className="text-[#D4AF37]">Admin</span>
           </Link>
-          <div className="mt-4 flex items-center gap-3 bg-black/40 p-3 rounded-xl border border-white/5">
-            <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#FACC15] flex items-center justify-center flex-shrink-0 text-black font-bold">
-              {user.email?.charAt(0).toUpperCase()}
-            </div>
-            <p className="text-neutral-400 text-xs font-medium truncate">{user.email}</p>
-          </div>
         </div>
         
-        <nav className="flex-1 p-6 space-y-2">
-          <Link href="/admin" className="flex items-center gap-3 px-4 py-3.5 text-neutral-300 hover:text-[#D4AF37] hover:bg-[#D4AF37]/10 rounded-xl transition-all group font-medium">
-            <LayoutDashboard className="w-5 h-5 text-neutral-500 group-hover:text-[#D4AF37] transition-colors" />
-            <span>Dashboard</span>
-          </Link>
-          <Link href="/admin/settings" className="flex items-center gap-3 px-4 py-3.5 text-neutral-300 hover:text-[#D4AF37] hover:bg-[#D4AF37]/10 rounded-xl transition-all group font-medium">
-            <Settings className="w-5 h-5 text-neutral-500 group-hover:text-[#D4AF37] transition-colors" />
-            <span>Settings</span>
-          </Link>
-        </nav>
+        <SidebarNav />
 
-        <div className="p-6 border-t border-white/5">
+        <div className="p-4 border-t border-neutral-900">
+          <div className="px-4 py-3 mb-2">
+            <p className="text-xs text-neutral-500 font-medium uppercase tracking-wider mb-1">Logged in as</p>
+            <p className="text-sm font-semibold truncate">{user.email}</p>
+          </div>
           <form action={signOut}>
-            <button type="submit" className="w-full flex items-center justify-center gap-3 px-4 py-3.5 text-red-400 hover:text-red-300 hover:bg-red-950/40 border border-transparent hover:border-red-900/50 rounded-xl transition-all font-medium">
+            <button type="submit" className="flex w-full items-center gap-3 px-4 py-3 rounded-xl text-neutral-400 hover:bg-[#D4AF37]/10 hover:text-[#D4AF37] transition font-medium">
               <LogOut className="w-5 h-5" />
-              <span>Secure Sign Out</span>
+              Sign Out
             </button>
           </form>
         </div>
       </aside>
 
-      {/* Main Content Area */}
-      <main className="relative z-10 flex-1 p-6 md:p-12 overflow-y-auto bg-transparent">
-        <div className="max-w-6xl mx-auto">
+      {/* Main Content */}
+      <main className="flex-1 overflow-y-auto pb-24 md:pb-0 relative bg-[#0a0a0a]">
+        <header className="h-20 border-b border-neutral-900 flex items-center justify-between px-6 md:hidden">
+          <Link href="/" className="text-xl font-black tracking-tighter uppercase">
+            Opara <span className="text-[#D4AF37]">Admin</span>
+          </Link>
+        </header>
+        <div className="p-4 md:p-8 max-w-7xl mx-auto">
           {children}
         </div>
       </main>

@@ -1,27 +1,61 @@
-import { CarFront, Plus, Search } from 'lucide-react'
+import { Car, DollarSign, Wallet, Activity } from 'lucide-react'
 
 export default function AdminDashboard() {
   return (
     <div>
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-10">
-        <div>
-          <h1 className="text-3xl font-serif font-bold text-white uppercase tracking-wider mb-2">Fleet Management</h1>
-          <p className="text-neutral-400">Oversee and update your showroom inventory.</p>
-        </div>
-        <button className="flex items-center gap-2 bg-[#D4AF37] hover:bg-[#B89A30] text-black font-bold uppercase tracking-wider px-6 py-3.5 rounded-xl transition-colors shadow-[0_0_20px_rgba(212,175,55,0.3)]">
-          <Plus className="w-5 h-5" />
-          <span>Add Vehicle</span>
-        </button>
+      <div className="mb-10">
+        <h1 className="text-2xl font-bold uppercase tracking-wide mb-1">Analytics Overview</h1>
+        <p className="text-neutral-500 text-sm">Real-time statistics for Opara Drive Gallery.</p>
       </div>
       
-      <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl p-8 md:p-12 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] text-center">
-        <div className="w-20 h-20 bg-[#D4AF37]/10 rounded-full flex items-center justify-center mx-auto mb-6">
-          <CarFront className="w-10 h-10 text-[#D4AF37]" />
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        {/* Total Inventory */}
+        <div className="bg-[#111] border border-neutral-900 rounded-2xl p-6 shadow-sm">
+          <div className="flex justify-between items-start mb-6">
+            <h3 className="text-xs font-bold text-neutral-400 uppercase tracking-widest">Total Inventory</h3>
+            <div className="w-8 h-8 rounded-full bg-blue-500/10 flex items-center justify-center">
+              <Car className="w-4 h-4 text-blue-500" />
+            </div>
+          </div>
+          <p className="text-3xl font-black mb-1">6</p>
+          <p className="text-xs text-neutral-600">Vehicles in database</p>
         </div>
-        <h2 className="text-2xl font-serif font-bold text-white mb-4">Inventory System Ready</h2>
-        <p className="text-neutral-400 max-w-md mx-auto">
-          The secure admin portal is fully styled and operational. Ready to connect the live database tables to add, edit, and remove vehicles.
-        </p>
+
+        {/* Available */}
+        <div className="bg-[#111] border border-neutral-900 rounded-2xl p-6 shadow-sm">
+          <div className="flex justify-between items-start mb-6">
+            <h3 className="text-xs font-bold text-neutral-400 uppercase tracking-widest">Available</h3>
+            <div className="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center">
+              <Activity className="w-4 h-4 text-emerald-500" />
+            </div>
+          </div>
+          <p className="text-3xl font-black mb-1">5</p>
+          <p className="text-xs text-neutral-600">Ready for sale</p>
+        </div>
+
+        {/* Fleet Value (NGN) */}
+        <div className="bg-[#111] border border-neutral-900 rounded-2xl p-6 shadow-sm">
+          <div className="flex justify-between items-start mb-6">
+            <h3 className="text-xs font-bold text-neutral-400 uppercase tracking-widest">Fleet Value</h3>
+            <div className="w-8 h-8 rounded-full bg-[#D4AF37]/10 flex items-center justify-center">
+              <Wallet className="w-4 h-4 text-[#D4AF37]" />
+            </div>
+          </div>
+          <p className="text-3xl font-black mb-1">₦950,000,...</p>
+          <p className="text-xs text-neutral-600">Total value (Available)</p>
+        </div>
+
+        {/* Fleet Value (USD) */}
+        <div className="bg-[#111] border border-neutral-900 rounded-2xl p-6 shadow-sm">
+          <div className="flex justify-between items-start mb-6">
+            <h3 className="text-xs font-bold text-neutral-400 uppercase tracking-widest">Fleet Value</h3>
+            <div className="w-8 h-8 rounded-full bg-purple-500/10 flex items-center justify-center">
+              <DollarSign className="w-4 h-4 text-purple-500" />
+            </div>
+          </div>
+          <p className="text-3xl font-black mb-1">$676,000</p>
+          <p className="text-xs text-neutral-600">Total value (Available)</p>
+        </div>
       </div>
     </div>
   )
