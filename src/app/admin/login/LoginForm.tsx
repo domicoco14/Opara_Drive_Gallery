@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { Eye, EyeOff } from 'lucide-react'
-import { login } from '../actions'
+import { login } from './actions'
 
 export default function LoginForm() {
   const [showPassword, setShowPassword] = useState(false)
@@ -16,9 +16,9 @@ export default function LoginForm() {
           name="email" 
           type="email" 
           required 
-          defaultValue="admin@oparadrive.com"
-          className="w-full bg-[#111] border border-neutral-800 rounded-xl p-4 text-sm focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] outline-none transition placeholder:text-neutral-600 text-white"
-          placeholder="admin@oparadrive.com"
+          defaultValue="info.Oparaautos@gmail.com"
+          className="w-full bg-neutral-900/50 border border-neutral-800 rounded-xl p-4 text-sm focus:border-yellow-600 focus:ring-1 focus:ring-yellow-600 outline-none transition placeholder:text-neutral-600"
+          placeholder="admin@example.com"
         />
       </div>
       
@@ -30,7 +30,7 @@ export default function LoginForm() {
             name="password" 
             type={showPassword ? 'text' : 'password'} 
             required 
-            className="w-full bg-[#111] border border-neutral-800 rounded-xl p-4 pr-12 text-sm focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] outline-none transition placeholder:text-neutral-600 text-white"
+            className="w-full bg-neutral-900/50 border border-neutral-800 rounded-xl p-4 pr-12 text-sm focus:border-yellow-600 focus:ring-1 focus:ring-yellow-600 outline-none transition placeholder:text-neutral-600"
             placeholder="••••••••"
           />
           <button 
@@ -43,7 +43,7 @@ export default function LoginForm() {
         </div>
       </div>
 
-      <button type="submit" className="w-full bg-[#D4AF37] hover:bg-[#B89A30] text-black transition-all duration-300 py-4 rounded-xl font-bold shadow-lg shadow-[#D4AF37]/20 hover:shadow-[#D4AF37]/40 uppercase tracking-widest text-sm mt-8">
+      <button type="submit" className="w-full bg-yellow-600 hover:bg-[#B89A30] text-white transition-all duration-300 py-4 rounded-xl font-bold shadow-lg shadow-yellow-600/20 hover:shadow-yellow-600/40 uppercase tracking-widest text-sm mt-8">
         Log In securely
       </button>
     </form>

@@ -18,7 +18,7 @@ export default async function OverviewPage() {
     <div className="max-w-7xl mx-auto space-y-8">
       <div>
         <h1 className="text-3xl font-bold tracking-tight uppercase">Analytics Overview</h1>
-        <p className="text-neutral-500 mt-1">Real-time statistics for Opara Drive Gallery.</p>
+        <p className="text-neutral-500 mt-1">Real-time statistics for Opara Auto's.</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

@@ -7,24 +7,24 @@ export default async function LoginPage(props: { searchParams: Promise<{ error?:
   const error = searchParams?.error;
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-neutral-50 font-sans selection:bg-[#D4AF37] selection:text-black flex items-center justify-center relative overflow-hidden">
+    <div className="min-h-screen bg-neutral-950 text-neutral-50 font-sans selection:bg-yellow-600 selection:text-white flex items-center justify-center relative overflow-hidden">
       
       {/* Background Glowing Orbs for Glassmorphism */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none z-0 flex items-center justify-center">
-        <div className="absolute w-[40vw] h-[40vw] bg-[#D4AF37]/10 rounded-full blur-[100px]"></div>
+        <div className="absolute w-[40vw] h-[40vw] bg-yellow-600/20 rounded-full blur-[100px]"></div>
       </div>
 
-      <div className="relative z-10 w-full max-w-md p-8 bg-[#151515] border border-white/5 rounded-3xl shadow-[0_8px_32px_0_rgba(0,0,0,0.5)]">
+      <div className="relative z-10 w-full max-w-md p-8 bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-[0_8px_32px_0_rgba(0,0,0,0.5)]">
         
         <div className="text-center mb-10">
           <Link href="/" className="text-3xl font-black tracking-tighter uppercase inline-block mb-2">
-            Opara <span className="text-[#D4AF37]">Drive</span>
+            Opara <span className="text-yellow-600">Auto's</span>
           </Link>
           <p className="text-neutral-400 text-sm font-medium uppercase tracking-widest">Admin Portal</p>
         </div>
 
         {error && (
-          <div className="p-4 bg-red-950/40 border border-red-900/50 text-red-500 rounded-xl flex items-start gap-3 mb-6">
+          <div className="p-4 bg-red-950/40 border border-red-900/50 text-yellow-500 rounded-xl flex items-start gap-3 mb-6 animate-fade-in-up">
             <Info className="w-5 h-5 shrink-0 mt-0.5" />
             <p className="text-sm font-medium">{error}</p>
           </div>
