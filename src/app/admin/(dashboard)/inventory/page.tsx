@@ -95,9 +95,17 @@ export default async function InventoryPage() {
                   >
                     <Edit className="w-4 h-4" />
                   </Link>
-                  <button className="p-2 text-neutral-500 hover:text-red-500 transition-colors">
-                    <Trash2 className="w-4 h-4" />
-                  </button>
+                  <form action={async () => {
+                    'use server'
+                    const { deleteCar } = await import('../../actions')
+                    const formData = new FormData()
+                    formData.append('id', car.id)
+                    await deleteCar(formData)
+                  }}>
+                    <button type="submit" className="p-2 text-neutral-500 hover:text-red-500 transition-colors">
+                      <Trash2 className="w-4 h-4" />
+                    </button>
+                  </form>
                 </div>
               </div>
             ))}
