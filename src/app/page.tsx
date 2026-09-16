@@ -214,6 +214,22 @@ export default async function Home(props: { searchParams: Promise<{ [key: string
 
       <PremiumHero searchParams={searchParams} />
 
+      {/* About Section */}
+      <section id="about" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10 border-b border-white/5">
+        <div className="max-w-3xl mx-auto text-center space-y-6">
+          <h2 className="text-3xl font-serif font-bold uppercase tracking-widest text-[#D4AF37]">
+            About Us
+          </h2>
+          <div className="w-12 h-1 bg-[#D4AF37] mx-auto rounded-full"></div>
+          <p className="text-neutral-300 text-lg md:text-xl font-light leading-relaxed">
+            Opara Drive Gallery is Lagos' premier destination for luxury, performance, and imported vehicles. Located at <span className="font-semibold text-white">184 Iju Road, Fagba, Lagos</span>, we specialize in delivering the highest quality brand new and foreign used cars.
+          </p>
+          <p className="text-neutral-400 text-md md:text-lg font-light leading-relaxed">
+            With our seamless pre-order services, we ensure that if your dream car is not on our showroom floor, we will source it and bring it directly to you. We are truly <span className="italic text-white">"driven by excellence"</span>, and our absolute priority is your complete satisfaction.
+          </p>
+        </div>
+      </section>
+
       {/* Main Content */}
       <main id="inventory" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="flex flex-col lg:flex-row gap-8">

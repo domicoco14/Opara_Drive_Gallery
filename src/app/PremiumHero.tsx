@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion, useMotionValue, useTransform, useSpring } from 'framer-motion'
 import { Search, MessageCircle, User } from 'lucide-react'
 
@@ -96,9 +97,14 @@ export default function PremiumHero({ searchParams }: { searchParams: any }) {
         }}
       >
         <Link href="/" className="flex items-center gap-2">
-          <span className="text-lg md:text-xl font-bold tracking-tighter text-white whitespace-nowrap">
-            Opara Drive <span className="text-[#D4AF37]">GALLERY</span>
-          </span>
+          <Image 
+            src="/logo.jpg" 
+            alt="Opara Drive Gallery Logo" 
+            width={180} 
+            height={60} 
+            className="h-10 md:h-12 w-auto object-contain"
+            priority
+          />
         </Link>
         
         <div className="hidden md:flex items-center gap-10">
