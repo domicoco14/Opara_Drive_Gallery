@@ -98,11 +98,11 @@ export default function PremiumHero({ searchParams }: { searchParams: any }) {
       >
         <Link href="/" className="flex items-center gap-2">
           <Image 
-            src="/logo.jpg" 
+            src="/logo.png" 
             alt="Opara Drive Gallery Logo" 
-            width={180} 
-            height={60} 
-            className="h-10 md:h-12 w-auto object-contain"
+            width={220} 
+            height={80} 
+            className="h-12 md:h-16 w-auto object-contain drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
             priority
           />
         </Link>
