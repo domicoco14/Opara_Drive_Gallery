@@ -87,7 +87,7 @@ export default function PremiumHero({ searchParams }: { searchParams: any }) {
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
-        className="fixed top-4 md:top-6 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 rounded-[20px] px-4 md:px-6 py-3 flex items-center justify-between"
+        className="fixed top-3 md:top-4 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl z-50 rounded-[16px] px-4 md:px-6 py-2 flex items-center justify-between"
         style={{
           background: 'rgba(10, 10, 10, 0.45)',
           backdropFilter: 'blur(24px)',
@@ -100,9 +100,9 @@ export default function PremiumHero({ searchParams }: { searchParams: any }) {
           <Image 
             src="/logo.png" 
             alt="Opara Drive Gallery Logo" 
-            width={220} 
-            height={80} 
-            className="h-12 md:h-16 w-auto object-contain drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
+            width={160} 
+            height={50} 
+            className="h-7 md:h-9 w-auto object-contain drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]"
             priority
           />
         </Link>
@@ -186,7 +186,7 @@ export default function PremiumHero({ searchParams }: { searchParams: any }) {
           variants={containerVariants}
           initial="hidden"
           animate="show"
-          className="relative z-20 text-center px-4 max-w-6xl mx-auto mt-20 w-full"
+          className="relative z-20 text-center px-4 max-w-6xl mx-auto mt-28 md:mt-36 w-full"
           style={{ x: xForeground, y: yForeground }}
         >
           <motion.h1 
