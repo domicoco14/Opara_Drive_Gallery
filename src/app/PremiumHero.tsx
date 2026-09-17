@@ -186,7 +186,7 @@ export default function PremiumHero({ searchParams }: { searchParams: any }) {
           variants={containerVariants}
           initial="hidden"
           animate="show"
-          className="relative z-20 text-center px-4 max-w-6xl mx-auto mt-28 md:mt-36 w-full"
+          className="relative z-20 text-center px-4 max-w-6xl mx-auto mt-14 md:mt-36 w-full"
           style={{ x: xForeground, y: yForeground }}
         >
           <motion.h1 
