@@ -114,7 +114,7 @@ export default function PremiumHero({ searchParams }: { searchParams: any }) {
             <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/2 h-[2px] bg-white rounded-full shadow-[0_0_8px_rgba(255,255,255,0.8)] opacity-100" />
           </Link>
           <Link href="?preorder=true" scroll={false} className="text-sm font-medium text-gray-400 hover:text-white transition-colors duration-300">Source My Car</Link>
-          <Link href="#about" className="text-sm font-medium text-gray-400 hover:text-white transition-colors duration-300">About</Link>
+          <Link href="/about" className="text-sm font-medium text-gray-400 hover:text-white transition-colors duration-300">About</Link>
         </div>
         
         <div className="flex items-center gap-3 md:gap-6 shrink-0">
