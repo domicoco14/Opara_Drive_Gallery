@@ -24,7 +24,7 @@ export default function BirthdaySplash() {
         >
           {/* LEFT CURTAIN */}
           <motion.div
-            className="absolute top-0 left-0 w-1/2 h-full z-0 border-r-2 border-black/50 shadow-[10px_0_30px_rgba(0,0,0,0.8)]"
+            className="absolute top-0 left-0 w-[50.5%] h-full z-0 border-r border-black/80 shadow-[10px_0_30px_rgba(0,0,0,0.9)] bg-black"
             style={{ 
               backgroundImage: 'url(/curtain.jpg)',
               backgroundSize: '200% 100%',
@@ -41,7 +41,7 @@ export default function BirthdaySplash() {
 
           {/* RIGHT CURTAIN */}
           <motion.div
-            className="absolute top-0 right-0 w-1/2 h-full z-0 border-l-2 border-black/50 shadow-[-10px_0_30px_rgba(0,0,0,0.8)]"
+            className="absolute top-0 right-0 w-[50.5%] h-full z-0 border-l border-black/80 shadow-[-10px_0_30px_rgba(0,0,0,0.9)] bg-black"
             style={{ 
               backgroundImage: 'url(/curtain.jpg)',
               backgroundSize: '200% 100%',
