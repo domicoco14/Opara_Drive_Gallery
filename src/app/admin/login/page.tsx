@@ -18,7 +18,7 @@ export default async function LoginPage(props: { searchParams: Promise<{ error?:
         
         <div className="text-center mb-10">
           <Link href="/" className="text-3xl font-black tracking-tighter uppercase inline-block mb-2">
-            Opara <span className="text-yellow-600">Auto's</span>
+            Opara <span className="text-[#D4AF37]">Auto's</span>
           </Link>
           <p className="text-neutral-400 text-sm font-medium uppercase tracking-widest">Admin Portal</p>
         </div>

@@ -16,8 +16,8 @@ export default function LoginForm() {
           name="email" 
           type="email" 
           required 
-          defaultValue="info.Oparaautos@gmail.com"
-          className="w-full bg-neutral-900/50 border border-neutral-800 rounded-xl p-4 text-sm focus:border-yellow-600 focus:ring-1 focus:ring-yellow-600 outline-none transition placeholder:text-neutral-600"
+          defaultValue="opara_drive_gallery@gmail.com"
+          className="w-full bg-neutral-900/50 border border-neutral-800 rounded-xl p-4 text-sm focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] outline-none transition placeholder:text-neutral-600"
           placeholder="admin@example.com"
         />
       </div>
