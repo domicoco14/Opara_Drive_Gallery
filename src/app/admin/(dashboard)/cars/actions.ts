@@ -20,7 +20,7 @@ export async function saveCar(formData: FormData, id?: string) {
         const fileName = `${Date.now()}_${Math.random().toString(36).substring(7)}.${fileExt}`
         
         const { data, error } = await supabase.storage
-          .from('cars')
+          .from('car-images')
           .upload(fileName, file, { upsert: false })
 
         if (error) {
