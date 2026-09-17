@@ -37,6 +37,13 @@ export default function LightboxModal({ car }: { car: any }) {
     setSelectedIndex((prev) => (prev - 1 + images.length) % images.length)
   }
 
+  const [imageError, setImageError] = useState(false)
+
+  // Reset image error state when selectedIndex changes
+  useEffect(() => {
+    setImageError(false)
+  }, [selectedIndex])
+
   if (!car) return null
 
   const phoneNumber = "2349032903453"
@@ -68,27 +75,40 @@ export default function LightboxModal({ car }: { car: any }) {
           className="relative w-full h-full flex items-center justify-center px-4 md:px-20"
           onClick={(e) => e.stopPropagation()} // Prevent clicking image from closing
         >
-          {/* Blurred Background Layer for ambient effect */}
-          <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden flex items-center justify-center">
-            <Image 
-              src={images[selectedIndex]} 
-              alt="Background blur"
-              fill
-              sizes="100vw"
-              className="object-cover blur-[100px] opacity-30 scale-110"
-            />
-          </div>
+          {!imageError ? (
+            <>
+              {/* Blurred Background Layer for ambient effect */}
+              <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden flex items-center justify-center">
+                <Image 
+                  src={images[selectedIndex]} 
+                  alt=""
+                  fill
+                  sizes="100vw"
+                  className="object-cover blur-[100px] opacity-30 scale-110"
+                />
+              </div>
 
-          <div className="relative w-full h-[80vh] flex items-center justify-center z-10">
-            <Image 
-              src={images[selectedIndex]} 
-              alt={`Gallery image ${selectedIndex + 1}`}
-              fill
-              priority
-              sizes="100vw"
-              className="object-contain drop-shadow-2xl"
-            />
-          </div>
+              <div className="relative w-full h-[80vh] flex items-center justify-center z-10">
+                <Image 
+                  src={images[selectedIndex]} 
+                  alt=""
+                  fill
+                  priority
+                  sizes="100vw"
+                  className="object-contain drop-shadow-2xl"
+                  onError={() => setImageError(true)}
+                />
+              </div>
+            </>
+          ) : (
+            <div className="relative z-10 flex flex-col items-center justify-center text-center p-8 bg-neutral-900/80 rounded-2xl border border-white/10 max-w-md">
+              <div className="w-16 h-16 rounded-full bg-[#D4AF37]/10 flex items-center justify-center text-[#D4AF37] mb-4">
+                📷
+              </div>
+              <h3 className="text-lg font-bold text-white mb-1">Image Unavailable</h3>
+              <p className="text-xs text-neutral-400 mb-4">This specific photo could not be loaded or was removed.</p>
+            </div>
+          )}
 
           {/* Navigation Arrows */}
           {images.length > 1 && (

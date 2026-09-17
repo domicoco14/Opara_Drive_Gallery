@@ -112,9 +112,10 @@ export default function CarForm({ initialData }: { initialData?: any }) {
                 <button 
                   type="button" 
                   onClick={() => handleRemoveExistingImage(i)}
-                  className="absolute top-2 right-2 bg-yellow-600 text-white text-xs px-2 py-1 rounded shadow opacity-0 group-hover:opacity-100 transition-opacity"
+                  className="absolute top-2 right-2 bg-red-600 hover:bg-red-700 text-white text-[10px] font-bold px-2 py-1 rounded-md shadow-md transition-all flex items-center gap-1"
+                  title="Remove this image"
                 >
-                  Remove
+                  ✕ Remove
                 </button>
               </div>
             ))}
@@ -128,7 +129,7 @@ export default function CarForm({ initialData }: { initialData?: any }) {
             name="image_files" 
             multiple 
             accept="image/*"
-            className="w-full bg-neutral-950 border border-neutral-800 rounded-xl p-3 text-sm focus:border-yellow-600 focus:ring-1 focus:ring-yellow-600 outline-none transition file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-yellow-600 file:text-white hover:file:bg-red-700"
+            className="w-full bg-neutral-950 border border-neutral-800 rounded-xl p-3 text-sm focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] outline-none transition file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-xs file:font-semibold file:bg-[#D4AF37] file:text-black hover:file:bg-[#B89A30]"
           />
         </div>
       </div>
