@@ -80,7 +80,7 @@ export default function BirthdaySplash() {
               className="text-center px-6 max-w-3xl"
             >
               <h1 className="text-4xl md:text-7xl font-serif font-bold uppercase tracking-tight mb-4 text-white drop-shadow-2xl">
-                Happy Birthday, Mr. Oluwadamilola! 🎉
+                Happy Birthday, Oluwadamilola! 🎉
               </h1>
               <p className="text-xl md:text-3xl font-light text-neutral-200 mb-8 drop-shadow-lg">
                 Welcome to your new digital empire,
