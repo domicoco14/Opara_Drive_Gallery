@@ -25,34 +25,34 @@ export default function BirthdaySplash() {
           {/* LEFT CURTAIN */}
           <motion.div
             className="absolute top-0 left-0 w-[50.5%] h-full z-0 border-r border-black/80 shadow-[10px_0_30px_rgba(0,0,0,0.9)] bg-black"
-            style={{ 
+            style={{
               backgroundImage: 'url(/curtain.jpg)',
               backgroundSize: '200% 100%',
               backgroundPosition: 'left center',
               transformOrigin: 'left center',
             }}
             initial={{ scaleX: 1 }}
-            exit={{ 
-              scaleX: 0, 
+            exit={{
+              scaleX: 0,
               opacity: [1, 1, 1, 0], // Stay fully opaque until the very end of the fold
-              transition: { duration: 6, ease: [0.45, 0, 0.15, 1], times: [0, 0.4, 0.8, 1] } 
+              transition: { duration: 6, ease: [0.45, 0, 0.15, 1], times: [0, 0.4, 0.8, 1] }
             }}
           />
 
           {/* RIGHT CURTAIN */}
           <motion.div
             className="absolute top-0 right-0 w-[50.5%] h-full z-0 border-l border-black/80 shadow-[-10px_0_30px_rgba(0,0,0,0.9)] bg-black"
-            style={{ 
+            style={{
               backgroundImage: 'url(/curtain.jpg)',
               backgroundSize: '200% 100%',
               backgroundPosition: 'right center',
               transformOrigin: 'right center',
             }}
             initial={{ scaleX: 1 }}
-            exit={{ 
+            exit={{
               scaleX: 0,
               opacity: [1, 1, 1, 0],
-              transition: { duration: 6, ease: [0.45, 0, 0.15, 1], times: [0, 0.4, 0.8, 1] } 
+              transition: { duration: 6, ease: [0.45, 0, 0.15, 1], times: [0, 0.4, 0.8, 1] }
             }}
           />
 
@@ -80,7 +80,7 @@ export default function BirthdaySplash() {
               className="text-center px-6 max-w-3xl"
             >
               <h1 className="text-4xl md:text-7xl font-serif font-bold uppercase tracking-tight mb-4 text-white drop-shadow-2xl">
-                Happy Birthday, Mr. Oluwadamilare! 🎉
+                Happy Birthday, Mr. Oluwadamilola! 🎉
               </h1>
               <p className="text-xl md:text-3xl font-light text-neutral-200 mb-8 drop-shadow-lg">
                 Welcome to your new digital empire,
