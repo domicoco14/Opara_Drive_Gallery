@@ -265,7 +265,7 @@ export default async function Home(props: { searchParams: Promise<{ [key: string
               </p>
               <span className="hidden md:block text-neutral-800">•</span>
               <p className="text-neutral-500 text-sm">
-                Developed by <a href="https://wa.me/2347014098126" target="_blank" rel="noopener noreferrer" className="font-bold text-neutral-300 hover:text-white transition-colors">EDGE TECHNOLOGIES</a> <span className="text-xs ml-1">(+234 701 409 8126)</span>
+                Developed by <a href="https://wa.me/2347014098126" target="_blank" rel="noopener noreferrer" className="font-bold text-neutral-300 hover:text-white transition-colors">JIREH DIGITAL SOLUTIONS</a> <span className="text-xs ml-1">(+234 701 409 8126)</span>
               </p>
             </div>
             <div className="flex gap-4 text-sm font-medium text-neutral-500">
