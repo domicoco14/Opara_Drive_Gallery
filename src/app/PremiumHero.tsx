@@ -136,57 +136,60 @@ export default function PremiumHero({ searchParams }: { searchParams: any }) {
       </motion.nav>
 
       {/* Cinematic Hero Environment */}
-      <section className="relative min-h-[100dvh] md:h-screen w-full flex items-center justify-center overflow-hidden bg-[#0F172A] pt-20 pb-12 md:py-0">
+      <section className="relative min-h-[100dvh] w-full flex flex-col items-center justify-center bg-[#0F172A] pt-28 pb-16 md:pt-36 md:pb-20">
         
-        {/* Parallax Local Background Video */}
-        <motion.div 
-          className="absolute inset-[-20px] w-[calc(100%+40px)] h-[calc(100%+40px)]"
-          style={{ x: xBackground, y: yBackground }}
-        >
-          {/* Desktop Video (Horizontal) */}
-          <video 
-            src="/hero-video.mp4"
-            autoPlay 
-            muted 
-            loop 
-            playsInline
-            className="hidden md:block w-full h-full object-cover object-center opacity-70"
-          />
-          {/* Mobile Video (Vertical) */}
-          <video 
-            src="/hero-video-mobile.mp4"
-            autoPlay 
-            muted 
-            loop 
-            playsInline
-            className="block md:hidden w-full h-full object-cover object-center opacity-70"
-          />
-        </motion.div>
+        {/* Parallax & Ambient Lighting Environment (Safely clipped here) */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          {/* Parallax Local Background Video */}
+          <motion.div 
+            className="absolute inset-[-20px] w-[calc(100%+40px)] h-[calc(100%+40px)]"
+            style={{ x: xBackground, y: yBackground }}
+          >
+            {/* Desktop Video (Horizontal) */}
+            <video 
+              src="/hero-video.mp4"
+              autoPlay 
+              muted 
+              loop 
+              playsInline
+              className="hidden md:block w-full h-full object-cover object-center opacity-70"
+            />
+            {/* Mobile Video (Vertical) */}
+            <video 
+              src="/hero-video-mobile.mp4"
+              autoPlay 
+              muted 
+              loop 
+              playsInline
+              className="block md:hidden w-full h-full object-cover object-center opacity-70"
+            />
+          </motion.div>
 
-        {/* Cinematic Lighting Layers */}
-        {/* 1. Soft Top Gradient for Navbar legibility */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/90 via-transparent to-transparent z-10 h-1/2 pointer-events-none" />
-        
-        {/* 2. Bottom Vignette */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/60 to-transparent z-10 pointer-events-none" />
-        
-        {/* 3. Radial Spotlight over the car (assuming center focus) */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05)_0%,transparent_60%)] mix-blend-overlay z-10 pointer-events-none" />
+          {/* Cinematic Lighting Layers */}
+          {/* 1. Soft Top Gradient for Navbar legibility */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0F172A]/90 via-transparent to-transparent z-10 h-1/2 pointer-events-none" />
+          
+          {/* 2. Bottom Vignette */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/60 to-transparent z-10 pointer-events-none" />
+          
+          {/* 3. Radial Spotlight over the car (assuming center focus) */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.05)_0%,transparent_60%)] mix-blend-overlay z-10 pointer-events-none" />
 
-        {/* 4. Subtle Ambient Red Glow */}
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, scale: [1, 1.05, 1] }}
-          transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] bg-[#D4AF37]/10 blur-[120px] rounded-full z-10 pointer-events-none" 
-        />
+          {/* 4. Subtle Ambient Red Glow */}
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1, scale: [1, 1.05, 1] }}
+            transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+            className="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] bg-[#D4AF37]/10 blur-[120px] rounded-full z-10 pointer-events-none" 
+          />
+        </div>
 
         {/* Foreground Content */}
         <motion.div 
           variants={containerVariants}
           initial="hidden"
           animate="show"
-          className="relative z-20 text-center px-4 max-w-6xl mx-auto mt-2 md:mt-36 w-full"
+          className="relative z-20 text-center px-4 max-w-6xl mx-auto w-full my-auto"
           style={{ x: xForeground, y: yForeground }}
         >
           <motion.h1 
@@ -214,7 +217,7 @@ export default function PremiumHero({ searchParams }: { searchParams: any }) {
           {/* Premium Liquid Glass Search Bar */}
           <motion.form 
             variants={itemFadeUp}
-            className="group max-w-xl mx-auto flex items-center p-1.5 md:p-2 rounded-full transition-all duration-500 shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_16px_48px_rgba(0,0,0,0.6)] focus-within:shadow-[0_0_40px_rgba(212,175,55,0.15)]"
+            className="group max-w-xl mx-auto flex items-center p-1.5 md:p-2 rounded-full transition-all duration-500 shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_16px_48px_rgba(0,0,0,0.6)] focus-within:shadow-[0_0_40px_rgba(212,175,55,0.15)] relative z-30"
             style={{
               background: 'rgba(255, 255, 255, 0.03)',
               backdropFilter: 'blur(20px)',
@@ -222,7 +225,7 @@ export default function PremiumHero({ searchParams }: { searchParams: any }) {
               border: '1px solid rgba(255, 255, 255, 0.08)',
               boxShadow: 'inset 0 1px 1px rgba(255, 255, 255, 0.1)'
             }}
-            action="/" 
+            action="/#inventory" 
             method="GET"
           >
             <Search className="w-5 h-5 text-neutral-500 ml-3 md:ml-5 mr-2 md:mr-3 transition-colors duration-300 group-focus-within:text-white shrink-0" />
