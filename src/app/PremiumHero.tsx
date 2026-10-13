@@ -136,7 +136,7 @@ export default function PremiumHero({ searchParams }: { searchParams: any }) {
       </motion.nav>
 
       {/* Cinematic Hero Environment */}
-      <section className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-[#0F172A]">
+      <section className="relative min-h-[100dvh] md:h-screen w-full flex items-center justify-center overflow-hidden bg-[#0F172A] pt-20 pb-12 md:py-0">
         
         {/* Parallax Local Background Video */}
         <motion.div 
@@ -186,12 +186,12 @@ export default function PremiumHero({ searchParams }: { searchParams: any }) {
           variants={containerVariants}
           initial="hidden"
           animate="show"
-          className="relative z-20 text-center px-4 max-w-6xl mx-auto mt-4 md:mt-36 w-full"
+          className="relative z-20 text-center px-4 max-w-6xl mx-auto mt-2 md:mt-36 w-full"
           style={{ x: xForeground, y: yForeground }}
         >
           <motion.h1 
             variants={itemFadeUp}
-            className="font-serif font-bold uppercase tracking-tighter mb-4 md:mb-6 leading-[0.85] text-white drop-shadow-2xl flex flex-col items-center justify-center w-full"
+            className="font-serif font-bold uppercase tracking-tighter mb-3 md:mb-6 leading-[0.85] text-white drop-shadow-2xl flex flex-col items-center justify-center w-full"
           >
             <span className="text-[12.5vw] sm:text-7xl md:text-[7.5rem] lg:text-[8rem] whitespace-nowrap block tracking-tighter">OPARA DRIVE</span>
             <span className="text-[18.5vw] sm:text-7xl md:text-[7.5rem] lg:text-[8rem] text-[#D4AF37] block tracking-tighter">GALLERY</span>
@@ -199,14 +199,14 @@ export default function PremiumHero({ searchParams }: { searchParams: any }) {
 
           <motion.p 
             variants={itemFadeUp}
-            className="text-xl md:text-3xl text-[#D4AF37] italic font-serif mb-6 md:mb-10 drop-shadow-md"
+            className="text-base sm:text-xl md:text-3xl text-[#D4AF37] italic font-serif mb-2 md:mb-6 drop-shadow-md"
           >
             ...driven by excellence...
           </motion.p>
 
           <motion.p 
             variants={itemFadeIn}
-            className="text-lg md:text-2xl text-neutral-300 mb-16 max-w-3xl mx-auto font-light tracking-wide drop-shadow-md"
+            className="text-xs sm:text-base md:text-2xl text-neutral-300 mb-5 md:mb-14 max-w-3xl mx-auto font-light tracking-wide drop-shadow-md"
           >
             Lagos' premier destination for luxury, performance, and imported vehicles.
           </motion.p>
@@ -214,7 +214,7 @@ export default function PremiumHero({ searchParams }: { searchParams: any }) {
           {/* Premium Liquid Glass Search Bar */}
           <motion.form 
             variants={itemFadeUp}
-            className="group max-w-xl mx-auto flex items-center p-2 rounded-full transition-all duration-500 shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_16px_48px_rgba(0,0,0,0.6)] focus-within:shadow-[0_0_40px_rgba(212,175,55,0.15)]"
+            className="group max-w-xl mx-auto flex items-center p-1.5 md:p-2 rounded-full transition-all duration-500 shadow-[0_8px_32px_rgba(0,0,0,0.4)] hover:shadow-[0_16px_48px_rgba(0,0,0,0.6)] focus-within:shadow-[0_0_40px_rgba(212,175,55,0.15)]"
             style={{
               background: 'rgba(255, 255, 255, 0.03)',
               backdropFilter: 'blur(20px)',
@@ -231,7 +231,7 @@ export default function PremiumHero({ searchParams }: { searchParams: any }) {
               name="make"
               type="text" 
               placeholder="Search by make..." 
-              className="flex-1 min-w-0 bg-transparent border-none outline-none text-white placeholder:text-neutral-500/80 py-3 text-sm md:text-base font-medium transition-colors"
+              className="flex-1 min-w-0 bg-transparent border-none outline-none text-white placeholder:text-neutral-500/80 py-2.5 md:py-3 text-xs md:text-base font-medium transition-colors"
               defaultValue={searchParams?.make || ''}
             />
             
@@ -241,7 +241,7 @@ export default function PremiumHero({ searchParams }: { searchParams: any }) {
             
             <button 
               type="submit" 
-              className="bg-[#D4AF37] text-white px-5 md:px-8 py-3 rounded-full font-bold uppercase tracking-widest text-xs md:text-sm transition-all duration-400 shadow-[0_0_20px_rgba(212,175,55,0.2)] hover:shadow-[0_0_30px_rgba(212,175,55,0.5)] hover:-translate-y-[2px] shrink-0"
+              className="bg-[#D4AF37] text-white px-5 md:px-8 py-2.5 md:py-3 rounded-full font-bold uppercase tracking-widest text-xs md:text-sm transition-all duration-400 shadow-[0_0_20px_rgba(212,175,55,0.2)] hover:shadow-[0_0_30px_rgba(212,175,55,0.5)] hover:-translate-y-[2px] shrink-0"
             >
               Search
             </button>
