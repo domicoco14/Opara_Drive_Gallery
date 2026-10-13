@@ -5,12 +5,21 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Confetti from 'react-confetti';
 
 export default function BirthdaySplash() {
-  const [show, setShow] = useState(() => new Date() < new Date('2026-10-01T00:00:00'));
+  // Active all through November 2nd, 2026 (expires midnight Nov 3)
+  const [show, setShow] = useState(() => new Date() < new Date('2026-11-03T00:00:00'));
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
 
   useEffect(() => {
     // Only run on client
     setWindowSize({ width: window.innerWidth, height: window.innerHeight });
+
+    // Allow manual testing anytime with ?birthday=true or ?splash=true
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get('birthday') === 'true' || params.get('splash') === 'true') {
+        setShow(true);
+      }
+    }
   }, []);
 
   return (
