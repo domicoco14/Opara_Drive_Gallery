@@ -1,8 +1,8 @@
-# Ephraim Autos 🚘
+# Opara Drive Gallery 🚘
 
 > A premium, high-performance auto dealership platform built with Next.js 15, Tailwind CSS, and Supabase.
 
-![Ephraim Autos Showcase](https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&q=80&w=2938&ixlib=rb-4.0.3)
+![Opara Drive Gallery Showcase](https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&q=80&w=2938&ixlib=rb-4.0.3)
 
 Ephraim Autos is a modern, glassmorphism-inspired web application designed for luxury car dealerships. It features a stunning user-facing showroom, an interactive image gallery, and a fully authenticated admin dashboard for seamless inventory management.
 
@@ -27,7 +27,7 @@ Ephraim Autos is a modern, glassmorphism-inspired web application designed for l
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/ephraim-autos.git
+   git clone https://github.com/your-username/opara-drive-gallery.git
    cd ephraim-autos
    ```
 
