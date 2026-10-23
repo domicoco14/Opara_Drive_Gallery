@@ -2,7 +2,7 @@ import { createClient } from '@/utils/supabase/server'
 import { cookies } from 'next/headers'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Search, MapPin, Phone, Mail, SlidersHorizontal, ChevronRight, MessageCircle, Info, User } from 'lucide-react'
+import { Search, MapPin, Phone, Mail, SlidersHorizontal, ChevronRight, MessageCircle, Info } from '@/components/Icons'
 import LightboxModal from './LightboxModal'
 import PremiumHero from './PremiumHero'
 import Preloader from '@/components/Preloader'
@@ -233,7 +233,6 @@ export default async function Home(props: { searchParams: Promise<{ [key: string
                 <li><Link href="/about" className="text-neutral-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2"><ChevronRight className="w-3 h-3" /> About Us</Link></li>
                 <li><a href="https://wa.me/2349032903453?text=Hello%20Opara%20Drive%20Gallery,%20I%20would%20like%20to%20inquire%20about%20your%20car%20financing%20options." target="_blank" rel="noopener noreferrer" className="text-neutral-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Financing Options</a></li>
                 <li><Link href="/terms" className="text-neutral-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Terms of Service</Link></li>
-                <li><Link href="/admin" className="text-neutral-400 hover:text-[#D4AF37] transition-colors text-sm flex items-center gap-2"><ChevronRight className="w-3 h-3" /> Admin Login</Link></li>
               </ul>
             </div>
 
@@ -268,10 +267,18 @@ export default async function Home(props: { searchParams: Promise<{ [key: string
                 Developed by <a href="https://wa.me/2347014098126" target="_blank" rel="noopener noreferrer" className="font-bold text-neutral-300 hover:text-white transition-colors">JIREH DIGITAL SOLUTIONS</a> <span className="text-xs ml-1">(+234 701 409 8126)</span>
               </p>
             </div>
-            <div className="flex gap-4 text-sm font-medium text-neutral-500">
+            <div className="flex flex-wrap items-center justify-center md:justify-end gap-x-5 gap-y-2 text-sm font-medium text-neutral-500">
               <a href="#" className="hover:text-white transition-colors">Privacy</a>
               <a href="#" className="hover:text-white transition-colors">Terms</a>
               <a href="#" className="hover:text-white transition-colors">Cookies</a>
+              <span className="hidden sm:inline text-neutral-800">•</span>
+              <Link 
+                href="/admin" 
+                rel="nofollow" 
+                className="text-neutral-600 hover:text-neutral-400 transition-colors duration-200 text-xs sm:text-sm tracking-wide"
+              >
+                Dealer Portal
+              </Link>
             </div>
           </div>
         </div>

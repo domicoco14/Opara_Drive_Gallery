@@ -2,7 +2,7 @@ import { createClient } from '@/utils/supabase/server'
 import { cookies } from 'next/headers'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Plus, Edit, Trash2 } from 'lucide-react'
+import { Plus, Edit, Trash2 } from '@/components/Icons'
 import { deleteCar } from './actions'
 
 export default async function AdminDashboard() {

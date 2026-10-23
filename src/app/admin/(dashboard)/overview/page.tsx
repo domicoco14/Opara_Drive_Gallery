@@ -1,6 +1,6 @@
 import { createClient } from '@/utils/supabase/server'
 import { cookies } from 'next/headers'
-import { CarFront, DollarSign, Activity, Wallet } from 'lucide-react'
+import { CarFront, DollarSign, Activity, Wallet } from '@/components/Icons'
 
 export default async function OverviewPage() {
   const cookieStore = await cookies()

@@ -1,6 +1,6 @@
 import LoginForm from './LoginForm'
 import Link from 'next/link'
-import { Info } from 'lucide-react'
+import { Info } from '@/components/Icons'
 
 export default async function LoginPage(props: { searchParams: Promise<{ error?: string }> }) {
   const searchParams = await props.searchParams;

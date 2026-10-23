@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowLeft, MapPin, Phone, Mail, Award, ShieldCheck, Car, Sparkles, MessageCircle } from 'lucide-react'
+import { ArrowLeft, MapPin, Phone, Mail, Award, ShieldCheck, Car, Sparkles, MessageCircle } from '@/components/Icons'
 
 export const metadata = {
   title: "About Us | Opara Drive Gallery",
@@ -204,8 +204,19 @@ export default function AboutPage() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-white/5 py-8 text-center text-xs text-neutral-500">
-        <p>© {new Date().getFullYear()} OPARA ELITE LINKS AND VENTURES. All rights reserved.</p>
+      <footer className="border-t border-white/5 py-8 text-xs text-neutral-500">
+        <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+          <p>© {new Date().getFullYear()} OPARA ELITE LINKS AND VENTURES. All rights reserved.</p>
+          <div className="flex items-center gap-4">
+            <Link 
+              href="/admin" 
+              rel="nofollow" 
+              className="text-neutral-600 hover:text-neutral-400 transition-colors duration-200"
+            >
+              Dealer Portal
+            </Link>
+          </div>
+        </div>
       </footer>
     </div>
   )

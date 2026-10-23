@@ -2,22 +2,26 @@ import { createClient } from '@supabase/supabase-js'
 import fs from 'fs'
 import path from 'path'
 
-// 1. Manually parse .env.local
+// Load local environment values for this standalone script.
 const envPath = path.join(process.cwd(), '.env.local')
-const envContent = fs.readFileSync(envPath, 'utf8')
 const env: Record<string, string> = {}
-envContent.split('\n').forEach(line => {
-  const match = line.match(/^([^=]+)=(.*)$/)
-  if (match) {
-    env[match[1].trim()] = match[2].trim()
-  }
-})
+if (fs.existsSync(envPath)) {
+  const envContent = fs.readFileSync(envPath, 'utf8')
+  envContent.split(/\r?\n/).forEach(line => {
+    const match = line.match(/^([^=]+)=(.*)$/)
+    if (match) {
+      env[match[1].trim()] = match[2].trim()
+    }
+  })
+}
 
 const supabaseUrl = env['NEXT_PUBLIC_SUPABASE_URL']
 const supabaseKey = env['NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY']
+const adminEmail = env['SUPABASE_ADMIN_EMAIL']
+const adminPassword = env['SUPABASE_ADMIN_PASSWORD']
 
-if (!supabaseUrl || !supabaseKey) {
-  throw new Error('Supabase URL or Key is missing in .env.local')
+if (!supabaseUrl || !supabaseKey || !adminEmail || !adminPassword) {
+  throw new Error('Supabase URL, publishable key, admin email, or admin password is missing in .env.local')
 }
 
 const supabase = createClient(supabaseUrl, supabaseKey)
@@ -79,8 +83,8 @@ function parseCarDetails(folderName: string) {
 async function run() {
   console.log('Logging into Supabase as Admin...')
   const { data: authData, error: authError } = await supabase.auth.signInWithPassword({
-    email: 'info.ephraimautos@gmail.com',
-    password: 'Ephraim1#' // From earlier chat
+    email: adminEmail,
+    password: adminPassword
   })
 
   if (authError) {

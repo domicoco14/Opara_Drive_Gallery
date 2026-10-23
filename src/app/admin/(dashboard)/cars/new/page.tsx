@@ -1,6 +1,6 @@
 import CarForm from '../CarForm'
 import Link from 'next/link'
-import { ArrowLeft } from 'lucide-react'
+import { ArrowLeft } from '@/components/Icons'
 
 export default function NewCarPage() {
   return (

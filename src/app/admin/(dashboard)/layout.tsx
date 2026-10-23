@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { LogOut } from 'lucide-react'
+import { LogOut } from '@/components/Icons'
 import { createClient } from '@/utils/supabase/server'
 import { cookies } from 'next/headers'
 import { redirect } from 'next/navigation'

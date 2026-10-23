@@ -25,38 +25,49 @@ Ephraim Autos is a modern, glassmorphism-inspired web application designed for l
 
 ## 🛠️ Local Setup
 
-1. **Clone the repository:**
+1. **Install Node.js:** Install Node.js 20.9 or newer (LTS recommended), then open a new terminal and check:
    ```bash
-   git clone https://github.com/your-username/opara-drive-gallery.git
-   cd ephraim-autos
+   node --version
+   npm --version
    ```
 
-2. **Install dependencies:**
+2. **Install dependencies** from the repository root:
    ```bash
    npm install
    ```
 
-3. **Set up Environment Variables:**
-   Create a `.env.local` file in the root directory and add your Supabase credentials:
+3. **Create a Supabase project:** In the Supabase dashboard, create a project and copy its Project URL and publishable (anon) key from **Project Settings → API**.
+
+4. **Configure local environment variables:** Create `.env.local` in the repository root:
    ```env
-   NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
-   NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=your_supabase_anon_key
+   NEXT_PUBLIC_SUPABASE_URL=https://your-project.supabase.co
+   NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=your-publishable-key
+   ```
+   For bulk imports, also add the email and password of a Supabase Auth user that has the required database and Storage permissions. Keep these values local; `.env.local` is git-ignored:
+   ```env
+   SUPABASE_ADMIN_EMAIL=your-admin-email
+   SUPABASE_ADMIN_PASSWORD=your-admin-password
    ```
 
-4. **Run the development server:**
+5. **Create the database and image storage:** In Supabase **SQL Editor**, run `schema.sql`. In **Storage**, create a bucket named `cars`. Configure its policies so images can be read publicly and only authorized admins can upload. The SQL file currently grants public read access to the `cars` table only; configure suitable insert/update/delete policies for your admin workflow without granting those operations to the public.
+
+6. **Run the development server:**
    ```bash
    npm run dev
    ```
    Open [http://localhost:3000](http://localhost:3000) to view the showroom.
+   To check the production build and lint rules, run `npm run build` and `npm run lint`.
+
+7. **Create an admin login:** In Supabase **Authentication → Users**, create the user you want to use for `/admin/login`. Use this user's email/password in the local import variables above if you run the bulk importer.
 
 ## 📦 Using the Bulk Importer
 
-If you have a local folder containing car images structured by Make and Model, you can automatically upload them to your live database:
+After completing the Supabase setup and configuring the importer's admin credentials in `.env.local`, run this from the repository root. The script reads folders under `Ephraim Autos Available Cars` and uploads their images and vehicle records to Supabase:
 
 ```bash
 node import-cars.mjs
 ```
-*Note: This script requires admin credentials inside the script to bypass Row Level Security.*
+The importer uses the signed-in user's normal Supabase permissions; do not add a service-role key to the application or expose one in a `NEXT_PUBLIC_` variable.
 
 ## 🔒 Security
 
