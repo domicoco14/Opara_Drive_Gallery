@@ -15,7 +15,10 @@ export default async function SettingsPage() {
         <p className="text-neutral-500 mt-1">Manage your administrator account credentials.</p>
       </div>
 
-      <SettingsForm initialEmail={user?.email || ''} />
+      <SettingsForm 
+        initialEmail={user?.email || ''} 
+        pendingEmail={user?.new_email || ''} 
+      />
     </div>
   )
 }

@@ -2,13 +2,12 @@ import { createClient } from '@/utils/supabase/server'
 import { cookies } from 'next/headers'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Search, MapPin, Phone, Mail, SlidersHorizontal, ChevronRight, MessageCircle, Info } from '@/components/Icons'
+import { Search, MapPin, Phone, Mail, ChevronRight, MessageCircle, Info } from '@/components/Icons'
 import LightboxModal from './LightboxModal'
 import PremiumHero from './PremiumHero'
 import Preloader from '@/components/Preloader'
 import BirthdaySplash from '@/components/BirthdaySplash'
 import ScrollRevealWrapper from '@/components/ScrollRevealWrapper'
-import MagneticWrapper from '@/components/MagneticWrapper'
 import PreOrderModal from '@/components/PreOrderModal'
 
 export const metadata = {
@@ -37,9 +36,9 @@ export default async function Home(props: { searchParams: Promise<{ [key: string
   // Order by newest first
   query = query.order('created_at', { ascending: false })
 
-  let { data: dbCars, error } = await query
+  const { data: dbCars, error } = await query
 
-  let cars = dbCars || []
+  const cars = dbCars || []
 
   const phoneNumber = "2349032903453"
 
@@ -96,7 +95,7 @@ export default async function Home(props: { searchParams: Promise<{ [key: string
 
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
               {cars?.map((car) => {
-                const messageText = `Hi Opara Drive Gallery, I'm interested in the ${car.year} ${car.make} ${car.model} listed on your site.${car.images?.[0] ? `\n\nVehicle Image: ${car.images[0]}` : ''}`
+                const messageText = `Hi Opara Drive Gallery, I am interested in the ${car.year} ${car.make} ${car.model} listed on your site.${car.images?.[0] ? `\n\nVehicle Image: ${car.images[0]}` : ''}`
                 const waLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(messageText)}`
 
                 return (
@@ -175,17 +174,6 @@ export default async function Home(props: { searchParams: Promise<{ [key: string
         </div>
       </main>
 
-      {/* Floating Concierge */}
-      <MagneticWrapper className="fixed bottom-6 right-6 z-50">
-        <a href={`https://wa.me/${phoneNumber}`} target="_blank" rel="noopener noreferrer" className="bg-[#25D366] text-white p-4 rounded-full shadow-[0_0_20px_rgba(37,211,102,0.4)] hover:scale-110 transition-transform flex items-center justify-center group">
-          <MessageCircle className="w-7 h-7" />
-          <span className="absolute -top-1 -right-1 flex h-4 w-4">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-4 w-4 bg-[#D4AF37] border-2 border-[#25D366]"></span>
-          </span>
-        </a>
-      </MagneticWrapper>
-
       {/* Footer */}
       <footer className="relative mt-20 border-t border-white/10 bg-neutral-950/60 backdrop-blur-3xl overflow-hidden">
         {/* Subtle top glow */}
@@ -200,7 +188,7 @@ export default async function Home(props: { searchParams: Promise<{ [key: string
                 Opara Drive <span className="text-[#D4AF37]">Gallery</span>
               </Link>
               <p className="text-neutral-400 text-sm leading-relaxed max-w-xs">
-                Lagos' most exclusive destination for luxury, performance, and imported vehicles. Drive your dream today.
+                Lagos is the most exclusive destination for luxury, performance, and imported vehicles. Drive your dream today.
               </p>
               <div className="flex gap-4 pt-2">
                 <a href="https://www.instagram.com/opara_drive_gallery/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-neutral-400 hover:bg-[#D4AF37] hover:text-white transition-all duration-300 border border-white/5">
@@ -286,7 +274,7 @@ export default async function Home(props: { searchParams: Promise<{ [key: string
 
       {/* Lightbox Modal Rendering */}
       {searchParams.gallery && (
-        <LightboxModal car={cars.find((c: any) => c.id === searchParams.gallery) || null} />
+        <LightboxModal car={cars.find((car) => car.id === searchParams.gallery) || null} />
       )}
     </div>
   )

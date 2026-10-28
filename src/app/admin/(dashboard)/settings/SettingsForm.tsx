@@ -6,9 +6,10 @@ import { updateAdminEmail, updateAdminPassword } from './actions'
 
 interface SettingsFormProps {
   initialEmail: string
+  pendingEmail?: string
 }
 
-export default function SettingsForm({ initialEmail }: SettingsFormProps) {
+export default function SettingsForm({ initialEmail, pendingEmail }: SettingsFormProps) {
   // Email state
   const [currentEmail, setCurrentEmail] = useState(initialEmail)
   const [newEmail, setNewEmail] = useState('')
@@ -100,6 +101,20 @@ export default function SettingsForm({ initialEmail }: SettingsFormProps) {
             <span className="font-mono text-white">{currentEmail || 'Not loaded'}</span>
           </div>
         </div>
+
+        {/* Pending Email Confirmation Banner */}
+        {pendingEmail && (
+          <div className="p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-300 text-sm flex items-start gap-3">
+            <AlertCircle className="w-5 h-5 text-amber-400 shrink-0 mt-0.5" />
+            <div className="space-y-1">
+              <p className="font-semibold text-white">Confirmation Link Sent & Waiting</p>
+              <p className="text-xs text-amber-200/90 leading-relaxed">
+                A verification link was dispatched to <strong className="text-white font-mono">{pendingEmail}</strong>. 
+                Please open your Gmail inbox (and check your Spam folder), then click the link to confirm and activate this new email.
+              </p>
+            </div>
+          </div>
+        )}
 
         {/* Change Email Form */}
         <form onSubmit={handleUpdateEmail} className="pt-2 space-y-4">
